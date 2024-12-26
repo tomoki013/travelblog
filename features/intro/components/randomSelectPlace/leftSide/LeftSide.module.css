@@ -1,0 +1,20 @@
+.loading {
+    display: inline-block;
+    margin: 6px;
+    font-size: 2rem;
+    color: #288d2d;
+    animation: loading 1.5s infinite;
+}
+.loading:nth-child(2){
+    color: #4d9f51;
+    animation-delay: .2s;
+}
+.loading:nth-child(3){
+    color: #68ab6b;
+    animation-delay: .3s;
+}
+@keyframes loading {
+    0%{transform: translateY(0);}
+    50%{transform: translateY(8px);}
+    100%{transform: translateY(0);}
+}

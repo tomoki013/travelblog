@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
     }
 
     return (
-        <footer className='bg-[var(--color-two)] p-4'>
+        <footer className='bg-[var(--color-two)] p-4 text-[var(--color-one)]'>
             <p className='text-center'>&copy; 2024 Tomokichi Travel</p>
             <FooterNavigation />
             <Elements.PageTopButton
