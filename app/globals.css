@@ -35,7 +35,6 @@
 html {
 	scroll-behavior: smooth;
 	font-size: 100%;
-	max-width: calc(100vw - 10px);
 	overflow-x: hidden;
   }
   
@@ -44,7 +43,6 @@ body {
 	padding: 0;
 	background-color: var(--main-bg-color);
 	font-family: var(--font-family);
-	max-width: calc(100vw - 10px);
 	overflow-x: hidden;
 }
   
@@ -64,10 +62,5 @@ h3 {
 @media (max-width: 768px) {
 	html {
 	  font-size: 12px;
-	}
-  
-	.no-scroll {
-	  overflow: hidden;
-	  position: fixed;
 	}
 }

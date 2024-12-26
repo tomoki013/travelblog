@@ -11,7 +11,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({ href, children, classNa
         <li>
             <Link
                 href={href}
-                className={`'text-black hover:opacity-70 ${className}'`}
+                className={` 'text-black hover:opacity-70 ${className} '`}
             >
                 {children}
             </Link>
