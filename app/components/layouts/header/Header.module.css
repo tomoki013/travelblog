@@ -1,0 +1,90 @@
+.opacity_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--color-one);
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: var(--header-z-index);
+}
+
+/*メインメニューのスタイル*/
+.navmenu {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: var(--color-one);
+    text-align: center;
+    color: #fff;
+    padding-top: 2rem;
+    z-index: calc(var(--header-z-index) - 1);
+}
+.navmenu.active {
+    position: fixed;
+    animation: fadein .5s forwards;
+}
+.navmenu.inactive {
+    position: fixed;
+    animation: fadeout 1.5s forwards;
+}
+
+.navmenu.active, .navmenu.inactive {
+    top: var(--header-height);
+    right: 0;
+}
+
+/*メインメニューのフェードイン、フェードアウト時のアニメーション*/
+@keyframes fadein {
+    0% {
+        right: -10%;
+        opacity: 0;
+    }100% {
+        right: 0%;
+        opacity: 1;
+    }
+}
+@keyframes fadeout {
+    0% {
+        right: 0;
+        opacity: 1;
+    }
+    100% {
+        right: -100%;
+        opacity: 0;
+    }
+}
+
+@media (max-width:768px) {
+    .opacity_header {
+        height: var(--mini-header-height);
+    }
+
+    .navmenu {
+        width: 100vw;
+        max-width: 768px;
+    }
+    @keyframes fadein {
+        0% {
+            top: -10%;
+            opacity: 0;
+        }
+        100% {
+            top: var(--mini-header-height);
+            opacity: 1;
+        }
+    }
+    @keyframes fadeout {
+        0% {
+            top: var(--mini-header-height);
+            opacity: 1;
+        }
+        100% {
+            top: -10%;
+            opacity: 0;
+        }
+    }
+}

@@ -3,19 +3,71 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --main-bg-color: #f7f5eb; /*メインの背景カラー*/
+    --color-one: #004d40; /*主に使うカラー1*/
+    --color-two: #e8f5e9; /*主に使うカラー2*/
+    --color-three: #2e7d32; /*主に使うカラー3*/
+	--hover-color-one: #00796b; /*カラー1のホバー時のカラー*/
+    --text-color: #333; /*ブログテキストのカラー*/
+    --blog-hover-color: rgb(220, 220, 220); /*ブログリストにホバー時のカラー*/
+    --indicator-color: #5ac9be; /*インジケーターの色*/
+    --header-height: 90px; /*ヘッダーの高さ*/
+    --mini-header-height: 70px; /*768px以下の時のヘッダーの高さ*/
+    --vertical-img-width: 500px; /*縦の写真の時の横幅*/
+    --beside-img-width: 350px; /*横の写真の時の横幅*/
+    --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*通常使用するフォント*/
+    --hambarger-width: 3.75rem; /*ハンバーガーアイコンの横幅*/
+    --hambarger-height: calc(var(--header-height) / 2.5); /*ハンバーガーアイコンの高さ*/
+    --hambarger-top-position: calc(var(--header-height) / 2 - 1.56rem); /*ハンバーガーアイコンの縦の位置*/
+    --hambarger-right-position: 1.5rem; /*ハンバーガーアイコンの横の位置*/
+    --mini-hambarger-width: 4rem; /*768px以下の時のハンバーガーアイコンの横幅*/
+    --mini-hambarger-height: calc(var(--mini-header-height) / 2.5); /*768px以下の時のハンバーガーアイコンの高さ*/
+    --mini-hambarger-top-position: calc(var(--mini-header-height) / 2  - 1.5rem); /*768px以下の時のハンバーガーアイコンの縦の位置*/
+    --mini-hambarger-right-position: 1.25rem; /*768px以下の時のハンバーガーアイコン横の位置*/
+    --header-z-index: 10; /*ヘッダーのz-index*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+	box-sizing: border-box;
+	word-break: auto-phrase;
+}
+  
+html {
+	scroll-behavior: smooth;
+	font-size: 100%;
+	max-width: calc(100vw - 10px);
+	overflow-x: hidden;
   }
-}
-
+  
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: var(--main-bg-color);
+	font-family: var(--font-family);
+	max-width: calc(100vw - 10px);
+	overflow-x: hidden;
+}
+  
+h1 {
+	font-size: 2rem;
+	font-weight: bold;
+}
+h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+h3 {
+	font-size: 1.2rem;
+	font-weight: bold;
+}
+  
+@media (max-width: 768px) {
+	html {
+	  font-size: 12px;
+	}
+  
+	.no-scroll {
+	  overflow: hidden;
+	  position: fixed;
+	}
 }
