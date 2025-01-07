@@ -3,17 +3,22 @@ import * as Layouts from '@/app/components/layouts/index';
 import * as Intro from '@/features/intro/components/index';
 import * as Blog from '@/features/blog/components/index';
 import { getAllDiaries, getDiaryBySlug, getAdjacentDiaries } from '@/lib/post';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
     const posts = await getAllDiaries();
     return posts.map((post) => ({ slug: post.slug }));
 }
 
-interface Params {
-    params: { slug: string };
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const post = await getDiaryBySlug(params.slug);
+    return {
+        title: post?.title || '記事が見つかりませんでした',
+        description: post?.description || '',
+    };
 }
 
-export default async function DiaryPage({ params }: Params) {
+export default async function DiaryPage({ params }: { params: { slug: string } }) {
     // データの取得
     const post = await getDiaryBySlug(params.slug);
     const { prevPost, nextPost } = await getAdjacentDiaries(params.slug);
@@ -26,10 +31,8 @@ export default async function DiaryPage({ params }: Params) {
     return (
         <>
             <Elements.MainContainer className='md:flex'>
-
                 {/* メインコンテンツ */}
                 <div className='w-full md:w-[70%]'>
-
                     <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
 
                     <Elements.UnitContainer style={{ textAlign: 'left' }}>
@@ -51,7 +54,6 @@ export default async function DiaryPage({ params }: Params) {
                     <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
 
                     <Layouts.BlogFooter className='hidden md:block' />
-
                 </div>
 
                 {/* 右サイドのスペース */}
@@ -62,7 +64,6 @@ export default async function DiaryPage({ params }: Params) {
             </Elements.MainContainer>
 
             <Layouts.BlogFooter className='md:hidden' />
-            
         </>
     );
 }
