@@ -9,10 +9,19 @@ export async function generateStaticParams() {
     return posts.map((post) => ({ slug: post.slug}));
 };
 
-export default async function InfoPage({ params }: { params: { slug: string } }) {
+interface Params {
+    params: { slug: string };
+}
 
+export default async function InfoPage({ params }: Params) {
+    // データの取得
     const post = await getInfoBySlug(params.slug);
     const { prevPost, nextPost } = await getAdjacentInfos(params.slug);
+
+    // 投稿が存在しない場合の処理
+    if (!post) {
+        return <div>記事が見つかりませんでした。</div>;
+    }
 
     return (
         <>
