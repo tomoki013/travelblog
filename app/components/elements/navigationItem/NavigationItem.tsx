@@ -8,10 +8,10 @@ interface NavigationItemProps {
 
 const NavigationItem: React.FC<NavigationItemProps> = ({ href, children, className }) => {
     return (
-        <li>
+        <li className='list-none'>
             <Link
                 href={href}
-                className={` 'text-black hover:opacity-70 ${className} '`}
+                className={`' hover:opacity-70 ${className} '`}
             >
                 {children}
             </Link>

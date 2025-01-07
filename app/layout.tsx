@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./globals.scss";
 import * as Layouts from "@/app/components/layouts/index";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({
     	<html lang="ja">
       		<body>
 				<Layouts.Header />
-        		{children}
+        			{children}
 				<Layouts.Footer />
       		</body>
     	</html>

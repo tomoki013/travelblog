@@ -1,0 +1,17 @@
+.blog_doc {
+    margin: 0 2.8rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.blog_doc hr {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.blog_doc img {
+    max-width: 300px;
+    max-height: 500px;
+    margin: 10px;
+}
