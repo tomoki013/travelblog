@@ -1,15 +1,27 @@
 import * as Elements from '@/app/components/elements/index';
 import * as Intro from '@/features/intro/components/index';
+import * as Blog from '@/features/blog/components/index';
 
 export default function Home() {
     return (
         <Elements.MainContainer>
 
-            <div className='w-[100%] h-[calc(100vh-var(--mini-header-height))] md:h-[calc(100vh-var(--header-height))]'>
+            <Elements.SlideContainer>
                 <Intro.TopPageNav />
                 <Intro.PageTopSlide />
                 <Intro.ScrollIcon />
-            </div>
+            </Elements.SlideContainer>
+
+            <Blog.DisplayPost type='diary' id='blog' styleType='style1' />
+
+            <Blog.DisplayPost type='info' id='travelinfo' styleType='style1'>
+                <Elements.NavigationItem
+                    href="/travelinfo"
+                    className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
+                >
+                    一覧へ ＞＞
+                </Elements.NavigationItem>
+            </Blog.DisplayPost>
             
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />

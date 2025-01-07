@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 import FooterNavigation from './FooterNavigation';
 import * as Elements from '@/app/components/elements/index';
 
@@ -9,7 +8,7 @@ interface FooterProps {
     className?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ className }) => {
+const BlogFooter: React.FC<FooterProps> = ({ className }) => {
     const [scrollPosition, setScrollPosition] = useState<number>(0);
     const [pageTopOpacity, setPageTopOpacity] = useState<number>(0);
 
@@ -32,12 +31,6 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         setPageTopOpacity(hover ? 0.5 : scrollPosition / 200);
     }
 
-    const pathName = usePathname();
-
-    if (pathName.includes('/post')) {
-        return null;
-    }
-
     const currentYear = new Date().getFullYear();
 
     return (
@@ -52,4 +45,4 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
     );
 }
 
-export default Footer;
+export default BlogFooter;

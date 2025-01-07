@@ -6,11 +6,11 @@ export default function ContactPage() {
     return (
         <Elements.MainContainer>
 
-            <div className='w-[100%] h-[calc(100vh-var(--mini-header-height))] md:h-[calc(100vh-var(--header-height))]'>
+            <Elements.SlideContainer>
                 <Intro.ContactPageNav />
                 <Intro.PageTopSlide />
                 <Intro.ScrollIcon />
-            </div>
+            </Elements.SlideContainer>
 
             <Elements.UnitContainer id="contactForm">
                 <Contact.ContactForm />
