@@ -7,8 +7,8 @@ import { Metadata } from 'next';
 
 export async function generateStaticParams() {
     const posts = await getAllInfos();
-    return posts.map((post) => ({ slug: post.slug}));
-};
+    return posts.map((post) => ({ slug: post.slug }));
+}
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const post = await getInfoBySlug(params.slug);
