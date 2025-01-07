@@ -3,17 +3,22 @@ import * as Layouts from '@/app/components/layouts/index';
 import * as Intro from '@/features/intro/components/index';
 import * as Blog from '@/features/blog/components/index';
 import { getAllInfos, getInfoBySlug, getAdjacentInfos } from '@/lib/post';
+import { Metadata } from 'next';
 
 export async function generateStaticParams() {
     const posts = await getAllInfos();
     return posts.map((post) => ({ slug: post.slug}));
 };
 
-interface Params {
-    params: { slug: string };
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+    const post = await getInfoBySlug(params.slug);
+    return {
+        title: post?.title || '記事が見つかりませんでした',
+        description: post?.description || '',
+    };
 }
 
-export default async function InfoPage({ params }: Params) {
+export default async function InfoPage({ params }: { params: { slug: string } }) {
     // データの取得
     const post = await getInfoBySlug(params.slug);
     const { prevPost, nextPost } = await getAdjacentInfos(params.slug);
