@@ -6,23 +6,32 @@ import { getAllDiaries, getDiaryBySlug, getAdjacentDiaries } from '@/lib/post';
 
 export async function generateStaticParams() {
     const posts = await getAllDiaries();
-    return posts.map((post) => ({ slug: post.slug}));
-};
+    return posts.map((post) => ({ slug: post.slug }));
+}
 
-export default async function DiaryPage({ params }: { params: { slug: string } }) {
+interface Params {
+    params: { slug: string };
+}
 
+export default async function DiaryPage({ params }: Params) {
+    // データの取得
     const post = await getDiaryBySlug(params.slug);
     const { prevPost, nextPost } = await getAdjacentDiaries(params.slug);
+
+    // 投稿が存在しない場合の処理
+    if (!post) {
+        return <div>記事が見つかりませんでした。</div>;
+    }
 
     return (
         <>
             <Elements.MainContainer className='md:flex'>
-        
+
                 {/* メインコンテンツ */}
                 <div className='w-full md:w-[70%]'>
-        
+
                     <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
-        
+
                     <Elements.UnitContainer style={{ textAlign: 'left' }}>
                         <Blog.Article
                             title={post.title}
@@ -34,27 +43,26 @@ export default async function DiaryPage({ params }: { params: { slug: string } }
                             content={post.content}
                         />
                     </Elements.UnitContainer>
-        
+
                     <Elements.UnitContainer id='profile'>
                         <Intro.Profile />
                     </Elements.UnitContainer>
-        
-                    <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
-        
-                    <Layouts.BlogFooter className='hidden md:block' />
-        
-                </div>
-        
-                {/* 右サイドのスタイルを整えるためのスペース */}
-                <div className='w-[30%]'></div>
-        
-                {/* 右サイドのコンテンツ */}
-                <Blog.DiaryRightSide />
-        
-            </Elements.MainContainer>
-        
-            <Layouts.BlogFooter className='md:hidden' />
 
+                    <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
+
+                    <Layouts.BlogFooter className='hidden md:block' />
+
+                </div>
+
+                {/* 右サイドのスペース */}
+                <div className='w-[30%]'>
+                    <Blog.DiaryRightSide />
+                </div>
+
+            </Elements.MainContainer>
+
+            <Layouts.BlogFooter className='md:hidden' />
+            
         </>
     );
 }
