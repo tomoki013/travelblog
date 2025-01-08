@@ -7,7 +7,6 @@ dates:
     - "2000-01-02"
 image: "/images/"
 alt: "の写真"
-excerpt: ""
 ---
 
 ---

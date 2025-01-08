@@ -72,19 +72,19 @@ const getPostBySlug = async (slug: string, directory: string) => {
  * @param {Function} getAll - 全投稿を取得する関数。
  * @returns {object} - 前後の投稿データ。
  */
-const getAdjacentPosts = (slug: string, getAll: () => { slug: string }[]) => {
-    const posts = getAll();
-    const currentIndex = posts.findIndex((post) => post.slug === slug);
+const getAdjacentPosts = (slug: string, getAllPosts: () => Post[]): { prevPost: Post | null, nextPost: Post | null } => {
+    const posts = getAllPosts();
 
-    if (currentIndex === -1) {
-        throw new Error(`Post with slug: ${slug} not found`);
-    }
+    // 日付順にソート
+    posts.sort((a, b) => new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime());
 
-    return {
-        prevPost: posts[currentIndex - 1] || null,
-        nextPost: posts[currentIndex + 1] || null,
-    };
-}
+    const index = posts.findIndex(post => post.slug === slug);
+
+    const prevPost = index > 0 ? posts[index - 1] : null;
+    const nextPost = index < posts.length - 1 ? posts[index + 1] : null;
+
+    return { prevPost, nextPost };
+};
 
 /**
  * 旅行日記関連関数
