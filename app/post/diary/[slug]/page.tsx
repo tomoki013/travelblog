@@ -5,7 +5,7 @@ import * as Blog from '@/features/blog/components/index';
 import { getAllDiaries, getDiaryBySlug, getAdjacentDiaries } from '@/lib/post';
 import { Metadata } from 'next';
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
     const posts = await getAllDiaries();
     return posts.map((post) => ({ slug: post.slug }));
 }
