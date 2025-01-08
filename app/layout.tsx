@@ -18,6 +18,19 @@ export default function RootLayout({
 				<meta name="google-site-verification" content="jk1E308JgpkVeYLTheB9i3UHWU3QVrRU9afhkYgvWPw" />
 				<meta name="msvalidate.01" content="37047B265EABB92200421D53818C4486" />
 				<meta name="google-adsense-account" content="ca-pub-8687520805381056"></meta>
+				{/* Google tag (gtag.js) */}
+				<script async src="https://www.googletagmanager.com/gtag/js?id=G-6KJ6B2X5BP"></script>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							window.dataLayer = window.dataLayer || [];
+							function gtag(){dataLayer.push(arguments);}
+							gtag('js', new Date());
+
+							gtag('config', 'G-6KJ6B2X5BP');
+						`,
+					}}>
+				</script>
 			</head>
       		<body>
 				<Layouts.Header />
