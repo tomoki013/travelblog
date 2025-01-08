@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: "https://travelblog-phi.vercel.app/",
-    generateRobotsTxt: true,
-    sitemapSize: 7000,
-  };
+    siteUrl: process.env.SITE_URL || 'https://travelblog-phi.vercel.app/',
+    generateRobotsTxt: true, // (optional)
+    // ...other options
+}
