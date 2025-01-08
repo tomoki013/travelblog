@@ -16,6 +16,7 @@ export default function RootLayout({
     	<html lang="ja">
 			<head>
 				<meta name="google-site-verification" content="jk1E308JgpkVeYLTheB9i3UHWU3QVrRU9afhkYgvWPw" />
+				<meta name="msvalidate.01" content="37047B265EABB92200421D53818C4486" />
 			</head>
       		<body>
 				<Layouts.Header />
