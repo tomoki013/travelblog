@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { Post } from '@/lib/types';
 
 type ArticleNavProps = {
-    prevPost?: { slug: string};
-    nextPost?: { slug: string};
+    prevPost?: Post | null;
+    nextPost?: Post | null;
 };
 
 const ArticleNav = ({ prevPost, nextPost}: ArticleNavProps) => {
@@ -12,7 +13,7 @@ const ArticleNav = ({ prevPost, nextPost}: ArticleNavProps) => {
             {/* 前のブログへのリンク */}
             {prevPost ? (
                 <Link
-                    href={`${prevPost.slug}`}
+                    href={`${prevPost?.slug}`}
                     className="text-[var(--color-one)] underline hover:text-[var(--hover-color-one)] absolute left-[5%]"
                 >
                     ＜＜前のブログへ
@@ -32,7 +33,7 @@ const ArticleNav = ({ prevPost, nextPost}: ArticleNavProps) => {
             {/* 次のブログへのリンク */}
             {nextPost ? (
                 <Link
-                    href={`${nextPost.slug}`}
+                    href={`${nextPost?.slug}`}
                     className="text-[var(--color-one)] underline hover:text-[var(--hover-color-one)] absolute right-[5%]"
                 >
                     次のブログへ＞＞
