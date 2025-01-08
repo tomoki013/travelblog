@@ -10,7 +10,8 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
     return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const params = await props.params;
     const post = await getInfoBySlug(params.slug);
     return {
         title: post?.title || '記事が見つかりませんでした',
@@ -18,7 +19,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function InfoPage({ params }: { params: { slug: string } }) {
+export default async function InfoPage(props: { params: Promise<{ slug: string }> }) {
+    const params = await props.params;
     // データの取得
     const post = await getInfoBySlug(params.slug);
     const { prevPost, nextPost } = await getAdjacentInfos(params.slug);
