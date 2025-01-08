@@ -5,7 +5,7 @@ import * as Blog from '@/features/blog/components/index';
 import { getAllInfos, getInfoBySlug, getAdjacentInfos } from '@/lib/post';
 import { Metadata } from 'next';
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
     const posts = await getAllInfos();
     return posts.map((post) => ({ slug: post.slug }));
 }
