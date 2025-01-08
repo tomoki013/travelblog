@@ -14,6 +14,9 @@ export default function RootLayout({
 }>) {
   	return (
     	<html lang="ja">
+			<head>
+				<meta name="google-site-verification" content="jk1E308JgpkVeYLTheB9i3UHWU3QVrRU9afhkYgvWPw" />
+			</head>
       		<body>
 				<Layouts.Header />
         			{children}
