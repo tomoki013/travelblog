@@ -3,6 +3,7 @@ import ArticleNav from "./article/ArticleNav";
 import DiaryRightSide from "./article/DiaryRightSide";
 import InfoRightSide from "./article/InfoRightSide";
 import DisplayPost from "./displayPost/DisplayPost";
+import InfoIndex from "./infoIndex/InfoIndex";
 
 export {
     Article,
@@ -10,4 +11,5 @@ export {
     DiaryRightSide,
     InfoRightSide,
     DisplayPost,
+    InfoIndex,
 };
