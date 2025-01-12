@@ -33,6 +33,7 @@ export default async function DiaryPage(props: { params: Promise<{ slug: string 
     return (
         <>
             <Elements.MainContainer className='md:flex'>
+
                 {/* メインコンテンツ */}
                 <div className='w-full md:w-[70%]'>
                     <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
@@ -59,9 +60,10 @@ export default async function DiaryPage(props: { params: Promise<{ slug: string 
                 </div>
 
                 {/* 右サイドのスペース */}
-                <div className='w-[30%]'>
-                    <Blog.DiaryRightSide />
-                </div>
+                <div className='w-[30%]'></div>
+
+                {/* 右サイドのコンテンツ */}
+                <Blog.DiaryRightSide />
 
             </Elements.MainContainer>
 
