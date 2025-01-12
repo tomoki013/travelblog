@@ -22,7 +22,7 @@ const directories = {
 const getAllPosts = (directory: string, type: 'diary' | 'info'): Post[] => {
     return fs.readdirSync(directory)
     .map((fileName) =>{
-        const fullPath= path.join(directory, fileName);
+        const fullPath = path.join(directory, fileName);
         const fileContents = fs.readFileSync(fullPath, 'utf-8');
         const { data } = matter(fileContents) as GrayMatterFile<string> & { data: Post };
 
@@ -89,7 +89,7 @@ const getAdjacentPosts = (slug: string, getAllPosts: () => Post[]): { prevPost: 
 /**
  * 旅行日記関連関数
  */
-export const getAllDiaries = ()=> getAllPosts(directories.diary, 'diary');
+export const getAllDiaries = () => getAllPosts(directories.diary, 'diary');
 export const getDiaryBySlug = (slug: string) => getPostBySlug(slug, directories.diary);
 export const getAdjacentDiaries = (slug: string) => getAdjacentPosts(slug, getAllDiaries);
 

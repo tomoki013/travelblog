@@ -5,7 +5,7 @@
     bottom: 15%;
     transform: translate(-50%, -85%);
     letter-spacing: .3rem;
-    z-index: 9;
+    z-index: calc(var(--header-z-index) - 2);
     color: #fff;
 }
 
