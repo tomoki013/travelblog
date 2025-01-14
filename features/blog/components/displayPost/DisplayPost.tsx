@@ -14,16 +14,16 @@ interface DisplayPostProps {
     sortType?: 'date' | 'random' | 'latest'; // 追加
 }
 
-const DisplayPost: React.FC<DisplayPostProps> = ({ type, displayCount, id, children, styleType, containerStyle, h2ClassName, hrClassName, sortType = 'date' }) => {
+const DisplayPost: React.FC<DisplayPostProps> = ({ type, displayCount, id, children, styleType, containerStyle, h2ClassName, hrClassName, sortType = 'latest' }) => {
     let items = type === 'diary' ? getAllDiaries() : getAllInfos();
     const count = displayCount || items.length;
 
     if (sortType === 'random') {
         items = items.sort(() => Math.random() - 0.5);
-    } else if (sortType === 'latest') {
-        items = items.sort((a, b) => new Date(b.dates[0]).getTime() - new Date(a.dates[0]).getTime());
-    } else {
+    } else if (sortType === 'date') {
         items = items.sort((a, b) => new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime());
+    } else {
+        items = items.sort((a, b) => new Date(b.dates[0]).getTime() - new Date(a.dates[0]).getTime());
     }
 
     return (

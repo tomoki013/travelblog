@@ -11,6 +11,12 @@ const FooterNavigation: React.FC = () => {
                     トップページ
                 </Elements.NavigationItem>
                 <Elements.NavigationItem
+                    href={'/blogList'}
+                    className='hover:underline text-[var(--color-one)] hover:text-[var(--color-three)]'
+                >
+                    ブログ一覧
+                </Elements.NavigationItem>
+                <Elements.NavigationItem
                     href={'/travelinfo'}
                     className='hover:underline text-[var(--color-one)] hover:text-[var(--color-three)]'
                 >

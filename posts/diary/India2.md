@@ -8,6 +8,7 @@ dates:
     - "2024-09-26"
 image: "/images/India/indiangate.jpg"
 alt: "インド門の写真"
+tags: ["海外", "アジア", "インド"]
 ---
 
 ---

@@ -7,6 +7,7 @@ dates:
     - "2024-09-24"
 image: "/images/India/vietnam1.jpg"
 alt: "近くのカフェから撮ったドンキンギアトゥック広場"
+tags: ["海外", "アジア", "インド"]
 ---
 
 ---

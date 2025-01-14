@@ -25,7 +25,7 @@ const ArticleNav = ({ prevPost, nextPost}: ArticleNavProps) => {
             {/* ブログ一覧へ */}
             <Link
                 className="hidden md:block text-[var(--color-one)] underline hover:text-[var(--hover-color-one)] absolute right-[46%]"
-                href="/"
+                href="/blogList"
             >
                 ブログ一覧へ
             </Link>

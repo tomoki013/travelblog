@@ -118,6 +118,12 @@ const Header: React.FC = () => {
                         トップページ
                     </NavigationMenuItem>
                     <NavigationMenuItem
+                        href="/blogList"
+                        onClick={toggleMenu}
+                    >
+                        ブログ一覧
+                    </NavigationMenuItem>
+                    <NavigationMenuItem
                         href="/travelinfo"
                         onClick={toggleMenu}
                     >

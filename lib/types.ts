@@ -7,4 +7,5 @@ export interface Post {
     alt: string;
     slug: string;
     type: 'diary' | 'info';
+    tags: string[];
 }

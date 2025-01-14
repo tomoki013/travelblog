@@ -7,6 +7,7 @@ dates:
     - "2024-03-03"
 image: "/images/Thai/hanne.jpg"
 alt: "ワット・ポーの涅槃仏の写真"
+tags: ["海外", "アジア", "タイ"]
 ---
 
 ---
