@@ -7,6 +7,7 @@
     top: var(--hambarger-top-position);
     right: var(--hambarger-right-position);
     transition: all .5s ease-in-out;
+    z-index: calc(var(--header-x-index) + 1);
 }
 
 /*ハンバーガーメニューのラインのスタイル*/
