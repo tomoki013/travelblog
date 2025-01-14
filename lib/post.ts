@@ -2,10 +2,6 @@ import { Post } from "./types";
 import fs from "fs";
 import path from "path";
 import matter, { GrayMatterFile } from "gray-matter";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
 
 // ディレクトリの定義
 const directories = {
@@ -36,6 +32,7 @@ const getAllPosts = (directory: string, type: 'diary' | 'info'): Post[] => {
             place: data.place,
             image: data.image,
             alt: data.alt,
+            tags: data.tags || [], // 修正: data.tag -> data.tags
             slug: fileName.replace(/\.md$/, ''),
             type,
         };
@@ -53,14 +50,8 @@ const getPostBySlug = async (slug: string, directory: string) => {
     const fileContents = fs.readFileSync(fullPath, 'utf-8');
     const { data, content } = matter(fileContents) as GrayMatterFile<string> & { data: Post };
 
-    const htmlContent = await unified()
-    .use(remarkParse)
-    .use(remarkRehype)
-    .use(rehypeStringify)
-    .process(content);
-
     return {
-        content: String(htmlContent),
+        content: String(content),
         ...data,
         slug,
     };

@@ -7,6 +7,7 @@ dates:
     - "2024-03-02"
 image: "/images/Thai/travel5.jpg"
 alt: "ワット・アルンのライトアップの写真"
+tags: ["海外", "アジア", "タイ"]
 ---
 
 ---

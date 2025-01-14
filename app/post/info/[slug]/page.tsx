@@ -47,6 +47,7 @@ export default async function InfoPage(props: { params: Promise<{ slug: string }
                             dates={post.dates}
                             image={post.image}
                             alt={post.alt}
+                            tags={post.tags}
                             content={post.content}
                         />
                     </Elements.UnitContainer>

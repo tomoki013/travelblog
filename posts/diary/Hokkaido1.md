@@ -7,6 +7,7 @@ dates:
     - "2024-02-27"
 image: "/images/Hokkaido/terebi.jpg"
 alt: "札幌テレビ塔の写真"
+tags: ["日本", "北海道"]
 ---
 
 ---

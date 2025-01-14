@@ -6,4 +6,5 @@ export interface ArticleProps {
     image: string;
     alt: string;
     content: string;
+    tags: string[];
 }

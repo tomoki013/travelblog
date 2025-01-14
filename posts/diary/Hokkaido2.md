@@ -8,6 +8,7 @@ dates:
     - "2024-02-29"
 image: "/images/Hokkaido/Hokkaido1.jpg"
 alt: "有名な看板の写真"
+tags: ["日本", "北海道"]
 ---
 
 ---

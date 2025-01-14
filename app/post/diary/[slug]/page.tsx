@@ -46,6 +46,7 @@ export default async function DiaryPage(props: { params: Promise<{ slug: string 
                             dates={post.dates}
                             image={post.image}
                             alt={post.alt}
+                            tags={post.tags}
                             content={post.content}
                         />
                     </Elements.UnitContainer>
