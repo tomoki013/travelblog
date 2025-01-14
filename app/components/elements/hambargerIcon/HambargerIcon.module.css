@@ -62,6 +62,7 @@
         height: var(--mini-hambarger-height);
         top: var(--mini-hambarger-top-position);
         right: var(--mini-hambarger-right-position);
+        pointer-events: auto; /* Ensure pointer events are enabled */
     }
 
     .line {
