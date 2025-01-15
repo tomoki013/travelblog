@@ -11,7 +11,7 @@ const Article = ({ title, place, dates, image, alt, tags, content }: ArticleProp
             <h2 className="mb-0 pb-0 text-center">{title}</h2><hr />
             <p className="my-0 mr-3 text-right">{place}</p>
             <p className="my-0 mr-3 text-right">{dates}</p>
-            <Elements.Tags tags={tags} ulClassName="justify-end" />
+            <Elements.Tags tags={tags} ulClassName="justify-end" hideAll />
             <div className="flex justify-center my-4">
                 <Image 
                     src={image}

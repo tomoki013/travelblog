@@ -2,7 +2,7 @@ import * as Elements from '@/app/components/elements/index';
 import * as Blog from '@/features/blog/components/index';
 import * as Intro from '@/features/intro/components/index';
 import { Metadata } from 'next';
-// import { getAllDiaries } from '@/lib/post';
+import { getAllDiaries } from '@/lib/post';
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -12,8 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function BlogListPage() {
-    // const posts = await getAllDiaries();
-    // const tags = Array.from(new Set(posts.flatMap(post => post.tags)));
+    const posts = await getAllDiaries();
+    const tags = Array.from(new Set(posts.flatMap(post => post.tags)));
     return (
         <Elements.MainContainer>
                     
@@ -23,12 +23,12 @@ export default async function BlogListPage() {
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
 
-            {/* <Elements.UnitContainer>
+            <Elements.UnitContainer>
                 <h2>ジャンルごとに見る</h2><hr />
                 <Elements.Tags tags={tags} ulClassName='justify-center' />
-            </Elements.UnitContainer> */}
+            </Elements.UnitContainer>
 
-            <Blog.DisplayPost type="diary" styleType="style1" id='blogList' />
+            <Blog.DisplayPost type="diary" posts={posts} styleType="style1" id='blogList' />
             
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />
