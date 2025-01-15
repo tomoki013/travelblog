@@ -62,7 +62,7 @@ const Tags: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
         <Suspense fallback={<div>Loading...</div>}>
             <TagsItem tags={tags} ulClassName={ulClassName} hideAll={hideAll} />
         </Suspense>
-    )
+    );
 }
 
 export default Tags;

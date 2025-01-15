@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import styles from "./Header.module.css";
 import NavigationMenuItem from "./NavigationMenuItem";
 import * as Elements from "@/app/components/elements/index";
@@ -136,6 +136,12 @@ const Header: React.FC = () => {
                         お問い合わせ
                     </NavigationMenuItem>
                 </ul>
+                <section className="flex justify-center flex-wrap gap-4 p-6">
+                    <Elements.GitHubIcon />
+                    <Elements.TikTokIcon />
+                    <Elements.YouTubeIcon />
+                    <Elements.InstagramIcon />
+                </section>
             </nav>
         </header>
     );
