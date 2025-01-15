@@ -18,7 +18,7 @@ interface DisplayPostProps {
     sortType?: 'date' | 'random' | 'latest'; // 追加
 }
 
-const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCount, id, styleType, containerStyle, h2ClassName, hrClassName, sortType = 'latest' }) => {
+const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCount, id, styleType, containerStyle, h2ClassName, hrClassName, sortType = 'latest', children }) => {
     const searchParams = useSearchParams();
     const tag = searchParams.get("tag");
 
@@ -43,6 +43,7 @@ const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCoun
                     <Elements.PostStyle key={item.slug} post={item} generatePostLink={() => `/post/${type}/${item.slug}`} styleType={styleType} />
                 ))}
             </ul>
+            {children}
         </Elements.UnitContainer>
     );
 }
