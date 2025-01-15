@@ -1,8 +1,12 @@
 import * as Elements from '@/app/components/elements/index';
 import * as Intro from '@/features/intro/components/index';
 import * as Blog from '@/features/blog/components/index';
+import { getAllDiaries, getAllInfos } from '@/lib/post';
 
 export default function Home() {
+    const diary = getAllDiaries();
+    const info = getAllInfos();
+
     return (
         <Elements.MainContainer>
 
@@ -12,7 +16,7 @@ export default function Home() {
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
 
-            <Blog.DisplayPost type='diary' id='blog' styleType='style1' displayCount={10}> 
+            <Blog.DisplayPost type='diary' posts={diary} id='blog' styleType='style1' displayCount={10}> 
                 <Elements.NavigationItem
                     href="/blogList"
                     className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
@@ -21,7 +25,7 @@ export default function Home() {
                 </Elements.NavigationItem>
             </Blog.DisplayPost>
 
-            <Blog.DisplayPost type='info' id='travelinfo' styleType='style1' displayCount={10}>
+            <Blog.DisplayPost type='info' posts={info} id='travelinfo' styleType='style1' displayCount={10}>
                 <Elements.NavigationItem
                     href="/travelinfo"
                     className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"

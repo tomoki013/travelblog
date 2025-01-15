@@ -1,8 +1,10 @@
 import * as Elements from '@/app/components/elements/index';
 import * as Intro from '@/features/intro/components/index';
 import * as Blog from '@/features/blog/components/index';
+import { getAllInfos } from '@/lib/post';
 
 export default function TravelInfo() {
+    const posts = getAllInfos();
     return (
         <Elements.MainContainer>
             
@@ -12,7 +14,7 @@ export default function TravelInfo() {
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
 
-            <Blog.DisplayPost type='info' id='travelinfo' styleType='style1' />
+            <Blog.DisplayPost type='info' posts={posts} id='travelinfo' styleType='style1' />
 
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />

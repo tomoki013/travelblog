@@ -62,7 +62,7 @@ const RightSide: React.FC<RightSideProps> = ({
             </ul>
             <button
                 onClick={onClearPlaces}
-                className="mt-4 bg-red-500 text-white p-2 rounded"
+                className="mt-4 bg-red-500 text-white p-2 rounded hover:bg-red-700"
             >
                 全てクリア
             </button>

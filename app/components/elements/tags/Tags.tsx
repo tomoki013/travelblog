@@ -1,14 +1,21 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 interface TagsProps {
     tags?: string[];
     ulClassName?: string;
+    hideAll?: boolean; // 新しいプロパティを追加
 }
 
 // カスタムソートの順序を定義
-const customOrder = ["全て", "海外", "日本", "アジア", "インド", "タイ", "北海道"];
+const customOrder = ["全て", "海外", "アジア", "日本", "インド", "タイ", "北海道"];
 
-const Tags: React.FC<TagsProps> = ({ tags, ulClassName }) => {
+const TagsItem: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
+    const searchParams = useSearchParams();
+    const query = searchParams.get('tag') || "全て";
 
     if (!tags || tags.length === 0) {
         return null;
@@ -35,19 +42,27 @@ const Tags: React.FC<TagsProps> = ({ tags, ulClassName }) => {
     };
 
     // タグをカスタムソート
-    const sortedTags = [...tags].sort(customSort);
+    const sortedTags = hideAll ? [...tags].sort(customSort) : ["全て", ...tags].sort(customSort);
 
     return (
-        <ul className={`flex mt-2 ${ulClassName}`}>
+        <ul className={`flex mt-2 flex-wrap ${ulClassName}`}>
             {sortedTags.map((tag, index) => (
                 <li key={index}>
-                    <Link href={`/blogList?tag=${tag}`}>
-                        <p className="border border-black rounded-xl bg-gray-200 p-1 m-1">{tag}</p>
+                    <Link href={tag === "全て" ? `/blogList` : `/blogList?tag=${tag}`} scroll={false}>
+                        <p className={`border border-[var(--color-one)] text-[var(--color-one)] rounded p-1 m-1 hover:text-white hover:bg-[var(--color-one)] ${query === tag ? 'text-white bg-[var(--color-one)]' : ''}`}>{tag}</p>
                     </Link>
                 </li>
             ))}
         </ul>
     );
+}
+
+const Tags: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <TagsItem tags={tags} ulClassName={ulClassName} hideAll={hideAll} />
+        </Suspense>
+    )
 }
 
 export default Tags;
