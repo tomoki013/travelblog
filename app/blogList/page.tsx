@@ -28,7 +28,7 @@ export default async function BlogListPage() {
                 <Elements.Tags tags={tags} ulClassName='justify-center' />
             </Elements.UnitContainer>
 
-            <Blog.DisplayPost type="diary" posts={posts} styleType="style1" id='blogList' displayCount={10} />
+            <Blog.DisplayPost type="diary" styleType="style1" id='blogList' />zzzzzz
             
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />
