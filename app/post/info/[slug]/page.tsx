@@ -40,6 +40,11 @@ export default async function InfoPage(props: { params: Promise<{ slug: string }
                     <Blog.ArticleNav prevPost={prevPost} nextPost={nextPost} />
         
                     <Elements.UnitContainer style={{ textAlign: 'left' }}>
+
+                        <div className='rounded-md bg-yellow-200 flex justify-center items-center border border-black p-2'>
+                            <p>この記事は<span className='border-b-2 border-red-500'>{post.dates}</span>現在の情報です。最新情報に注意して旅行をしてください。</p>
+                        </div>
+
                         <Blog.Article
                             title={post.title}
                             description={post.description}
@@ -50,6 +55,7 @@ export default async function InfoPage(props: { params: Promise<{ slug: string }
                             tags={post.tags}
                             content={post.content}
                         />
+
                     </Elements.UnitContainer>
         
                     <Elements.UnitContainer id='profile'>
