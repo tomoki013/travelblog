@@ -34,15 +34,18 @@ const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCoun
         items = items.sort((a, b) => new Date(b.dates[0]).getTime() - new Date(a.dates[0]).getTime());
     }
 
+    const h2Title = type === "diary" ? "ブログ一覧" : type === "info" ? "観光情報一覧" : "ブログ一覧";
+
     return (
         <Elements.UnitContainer id={id} style={containerStyle}>
-            <h2 className={h2ClassName}>ブログ一覧</h2>
+            <h2 className={h2ClassName}>{h2Title}</h2>
             <hr className={hrClassName} />
             <ul className="flex flex-wrap justify-center p-0 m-0 gap-4">
                 {items.slice(0, count).map((item) => (
                     <Elements.PostStyle key={item.slug} post={item} generatePostLink={() => `/post/${type}/${item.slug}`} styleType={styleType} />
                 ))}
             </ul>
+            <Elements.Pagination />
             {children}
         </Elements.UnitContainer>
     );

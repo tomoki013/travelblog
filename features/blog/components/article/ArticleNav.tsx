@@ -1,12 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import { Post } from '@/lib/types';
+import { usePathname } from 'next/navigation';
 
 type ArticleNavProps = {
     prevPost?: Post | null;
     nextPost?: Post | null;
 };
 
-const ArticleNav = ({ prevPost, nextPost}: ArticleNavProps) => {
+const ArticleNav: React.FC<ArticleNavProps> = ({ prevPost, nextPost }) => {
+    const pathname = usePathname();
+    const blogListHref = pathname.includes('diary') ? '/blogList' : pathname.includes('info') ? '/travelinfo' : '/blogList';
+
     return (
         <nav className="relative h-6 my-3">
 
@@ -25,7 +31,7 @@ const ArticleNav = ({ prevPost, nextPost}: ArticleNavProps) => {
             {/* ブログ一覧へ */}
             <Link
                 className="hidden md:block text-[var(--color-one)] underline hover:text-[var(--hover-color-one)] absolute right-[46%]"
-                href="/blogList"
+                href={blogListHref}
             >
                 ブログ一覧へ
             </Link>
