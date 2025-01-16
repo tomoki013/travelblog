@@ -15,7 +15,7 @@ tags: ["海外", "アジア", "タイ"]
 
 ## 基本情報
 
-| 基本情報 | |
+| | |
 |---------|-----------------------------------------------|
 | 名称 | ワット・ポー "Wat Pho"（涅槃寺） |
 | URL | [https://www.royalgrandpalace.th/en/home](https://www.royalgrandpalace.th/en/home) |
