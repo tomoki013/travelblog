@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 interface TagsProps {
@@ -16,6 +16,16 @@ const customOrder = ["全て", "海外", "アジア", "日本", "インド", "�
 const TagsItem: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
     const searchParams = useSearchParams();
     const query = searchParams.get('tag') || "全て";
+
+    let url = '/blogList';
+    const pathname = usePathname();
+    if (pathname.includes('blogList')) {
+        url = '/blogList';
+    } else if (pathname.includes('travelinfo')) {
+        url = '/travelinfo';
+    } else if (pathname.includes('info')) {
+        url = '/travelinfo';
+    }
 
     if (!tags || tags.length === 0) {
         return null;
@@ -48,7 +58,7 @@ const TagsItem: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
         <ul className={`flex mt-2 flex-wrap ${ulClassName}`}>
             {sortedTags.map((tag, index) => (
                 <li key={index}>
-                    <Link href={tag === "全て" ? `/blogList` : `/blogList?tag=${tag}`} scroll={false}>
+                    <Link href={tag === "全て" ? `${url}` : `${url}?tag=${tag}`} scroll={false}>
                         <p className={`border border-[var(--color-one)] text-[var(--color-one)] rounded p-1 m-1 hover:text-white hover:bg-[var(--color-one)] ${query === tag ? 'text-white bg-[var(--color-one)]' : ''}`}>{tag}</p>
                     </Link>
                 </li>
