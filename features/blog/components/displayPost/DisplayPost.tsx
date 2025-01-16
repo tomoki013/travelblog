@@ -51,10 +51,10 @@ const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCoun
     );
 }
 
-const DisplayPost: React.FC<DisplayPostProps> = ({ type, posts, styleType, children, displayCount, id, h2ClassName, hrClassName, containerStyle }) => {
+const DisplayPost: React.FC<DisplayPostProps> = ({ type, posts, styleType, children, displayCount, id, h2ClassName, hrClassName, containerStyle, sortType }) => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <DisplayPostItems type={type} posts={posts} styleType={styleType} displayCount={displayCount} id={id} h2ClassName={h2ClassName} hrClassName={hrClassName} containerStyle={containerStyle}>{children}</DisplayPostItems>
+            <DisplayPostItems type={type} posts={posts} styleType={styleType} displayCount={displayCount} id={id} h2ClassName={h2ClassName} hrClassName={hrClassName} containerStyle={containerStyle} sortType={sortType}>{children}</DisplayPostItems>
         </Suspense>
     )
 }

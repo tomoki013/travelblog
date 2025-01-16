@@ -10,6 +10,13 @@ interface PostStyleProps {
 }
 
 const PostStyle: React.FC<PostStyleProps> = ({ post, generatePostLink, styleType }) => {
+    const truncateTitle = (title: string, maxLength: number) => {
+        if (title.length > maxLength) {
+            return title.substring(0, maxLength) + '...';
+        }
+        return title;
+    };
+
     if (styleType === "style1") {
         return (
             <li 
@@ -28,7 +35,7 @@ const PostStyle: React.FC<PostStyleProps> = ({ post, generatePostLink, styleType
                         className="w-[100%] h-[150px] my-3 mx-0"
                     />
                     <hr />
-                    <p className="text-[var(--color-one)]">{post.title}</p>
+                    <p className="text-[var(--color-one)]">{truncateTitle(post.title, 15)}</p>
                 </Link>
             </li>
         );
@@ -42,7 +49,7 @@ const PostStyle: React.FC<PostStyleProps> = ({ post, generatePostLink, styleType
                     href={generatePostLink(post)}
                     className="flex items-center py-4 px-2 text-[var(--color-one)] transition-color duration-300 ease"
                 >
-                    <p>{post.title}</p>
+                    <p>{truncateTitle(post.title, 25)}</p>
                     <Image
                         src={post.image}
                         alt={post.alt}

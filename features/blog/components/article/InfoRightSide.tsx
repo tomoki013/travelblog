@@ -9,7 +9,7 @@ const InfoRightSide: React.FC = () => {
             {/* おすすめのブログ */}
             <div>
 				<h2 className="text-center text-[var(--color-three)]">おすすめのブログ</h2>
-				<Blog.DisplayPost type="info" posts={posts} displayCount={3} styleType="style2" containerStyle={{ margin: 0 }} h2ClassName="hidden" hrClassName="hidden" />
+				<Blog.DisplayPost type="info" posts={posts} displayCount={3} styleType="style2" containerStyle={{ margin: 0 }} h2ClassName="hidden" hrClassName="hidden" sortType="random" />
 			</div>
 
         </aside>
