@@ -15,7 +15,7 @@ interface DisplayPostProps {
     containerStyle?: React.CSSProperties;
     h2ClassName?: string;
     hrClassName?: string;
-    sortType?: 'date' | 'random' | 'latest'; // 追加
+    sortType?: 'date' | 'random' | 'latest';
 }
 
 const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCount, id, styleType, containerStyle, h2ClassName, hrClassName, sortType = 'latest', children }) => {

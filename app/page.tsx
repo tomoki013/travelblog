@@ -16,7 +16,7 @@ export default function Home() {
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
 
-            <Blog.DisplayPost type='diary' posts={diary} id='blog' styleType='style1' displayCount={10}> 
+            <Blog.DisplayPost type='diary' posts={diary} id='blog' styleType='style1' displayCount={6}> 
                 <Elements.NavigationItem
                     href="/blogList"
                     className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
@@ -25,7 +25,7 @@ export default function Home() {
                 </Elements.NavigationItem>
             </Blog.DisplayPost>
 
-            <Blog.DisplayPost type='info' posts={info} id='travelinfo' styleType='style1' displayCount={10}>
+            <Blog.DisplayPost type='info' posts={info} id='travelinfo' styleType='style1' displayCount={6}>
                 <Elements.NavigationItem
                     href="/travelinfo"
                     className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
