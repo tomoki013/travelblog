@@ -28,7 +28,7 @@ export default function TravelInfo() {
                 <Elements.Tags tags={tags} ulClassName='justify-center' />
             </Elements.UnitContainer>
 
-            <Blog.DisplayPost type='info' posts={posts} id='travelinfo' styleType='style1' displayCount={10} />
+            <Blog.DisplayPost type='info' id='travelinfo' styleType='style1' displayCount={10} />
 
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />
