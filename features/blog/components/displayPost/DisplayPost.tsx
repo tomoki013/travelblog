@@ -3,7 +3,7 @@
 import * as Elements from '@/app/components/elements/index';
 import { useSearchParams } from 'next/navigation';
 import { Post } from '@/lib/types';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 
 interface DisplayPostProps {
     type: "diary" | "info";
@@ -36,16 +36,26 @@ const DisplayPostItems: React.FC<DisplayPostProps> = ({ type, posts, displayCoun
 
     const h2Title = type === "diary" ? "ブログ一覧" : type === "info" ? "観光情報一覧" : "ブログ一覧";
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = displayCount || 10;
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
+
+    const paginatedItems = items.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
     return (
         <Elements.UnitContainer id={id} style={containerStyle}>
             <h2 className={h2ClassName}>{h2Title}</h2>
             <hr className={hrClassName} />
             <ul className="flex flex-wrap justify-center p-0 m-0 gap-4">
-                {items.slice(0, count).map((item) => (
+                {paginatedItems.slice(0, count).map((item) => (
                     <Elements.PostStyle key={item.slug} post={item} generatePostLink={() => `/post/${type}/${item.slug}`} styleType={styleType} />
                 ))}
             </ul>
-            <Elements.Pagination />
+            <Elements.Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
             {children}
         </Elements.UnitContainer>
     );
