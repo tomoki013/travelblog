@@ -39,11 +39,11 @@
 }
 
 .img_02{
-    background-image: url('/images/Thai/travel100.jpg');
+    background-image: url('/images/Thai/wat-arun-4.jpg');
     animation: slide-animation-02 20s infinite;
 }
 
 .img_03{
-    background-image: url('/images/Hokkaido/otaru.jpg');
+    background-image: url('/images/Hokkaido/otaru-canal.jpg');
     animation: slide-animation-03 20s infinite;
 }
