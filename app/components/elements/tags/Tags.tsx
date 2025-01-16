@@ -18,7 +18,12 @@ const TagsItem: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
     const query = searchParams.get('tag') || "全て";
 
     const pathname = usePathname();
-    const url = pathname.includes('/blogList') ? '/blogList' : pathname.includes('/travelinfo') ? '/travelinfo' : pathname.includes('info') ? 'travelinfo' : '/blogList';
+    let url = '/blogList';
+    if (pathname.includes('travelinfo')) {
+        url = '/travelinfo';
+    } else if (pathname.includes('/info')) {
+        url = '/travelinfo';
+    }
 
     if (!tags || tags.length === 0) {
         return null;
