@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Head from "next/head";
 import "./globals.scss";
 import * as Layouts from "@/app/components/layouts/index";
 
@@ -14,7 +15,8 @@ export default function RootLayout({
 }>) {
   	return (
     	<html lang="ja">
-			<head>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta name="google-site-verification" content="jk1E308JgpkVeYLTheB9i3UHWU3QVrRU9afhkYgvWPw" />
 				<meta name="msvalidate.01" content="37047B265EABB92200421D53818C4486" />
 				<meta name="google-adsense-account" content="ca-pub-8687520805381056"></meta>
@@ -31,7 +33,7 @@ export default function RootLayout({
 						`,
 					}}>
 				</script>
-			</head>
+			</Head>
       		<body>
 				<Layouts.Header />
         			{children}

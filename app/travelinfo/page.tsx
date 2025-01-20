@@ -6,8 +6,8 @@ import { getAllInfos } from '@/lib/post';
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: `観光情報一覧`,
-        description: `全ての観光情報一覧`,
+        title: `ともきちの旅行ブログ｜観光情報一覧`,
+        description: `初心者から経験者まで楽しめる旅情報を一覧でご覧いただけます。おすすめの観光スポットや隠れた名所をまとめました！`,
     };
 }
 
