@@ -5,12 +5,12 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import { visit } from 'unist-util-visit';
 import { Root, Heading } from 'mdast';
+import { InfoIndexProps } from '../types';
 
-interface InfoIndexProps {
-    content: string;
-}
-
-const InfoIndex = ({ content }: InfoIndexProps) => {
+const InfoIndex = ({
+    content
+}: InfoIndexProps
+) => {
     const [headings, setHeadings] = useState<string[]>([]);
 
     useEffect(() => {

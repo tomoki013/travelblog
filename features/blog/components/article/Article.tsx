@@ -5,7 +5,16 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import * as Elements from '@/app/components/elements/index';
 
-const Article = ({ title, place, dates, image, alt, tags, content }: ArticleProps) => {
+const Article = ({
+    title,
+    place,
+    dates,
+    image,
+    alt,
+    tags,
+    content
+}: ArticleProps
+) => {
     return (
         <article className="pt-3 pb-10 bg-white text-[var(--text-color)] md:rounded-xl">
             <h2 className="mb-0 pb-0 text-center">{title}</h2><hr />

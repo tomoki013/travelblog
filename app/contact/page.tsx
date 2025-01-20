@@ -2,7 +2,7 @@ import * as Contact from "@/features/contact/components/index";
 import * as Elements from "@/app/components/elements/index";
 import * as Intro from "@/features/intro/components/index";
 
-export default function ContactPage() {
+const ContactPage = () => {
     return (
         <Elements.MainContainer>
 
@@ -27,3 +27,5 @@ export default function ContactPage() {
         </Elements.MainContainer>
     );
 }
+
+export default ContactPage;

@@ -1,6 +1,6 @@
 import * as Blog from "@/features/blog/components/index";
 
-const InfoRightSide: React.FC = () => {
+const InfoRightSide = () => {
     return (
         <aside className="w-[100%] bg-white md:w-[30%] md:h-[calc(100vh-var(--header-height))] md:fixed top-[var(--header-height)] right-0 p-1">
 

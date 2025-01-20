@@ -1,12 +1,12 @@
 import Link from "next/link";
+import { NavigationMenuItemProps } from "../types";
 
-interface NavigationMenuItemProps {
-    href: string;
-    onClick: () => void;
-    children: React.ReactNode;
-}
-
-const NavigationMenuItem = ({ href, onClick, children } : NavigationMenuItemProps) => {
+const NavigationMenuItem = ({
+    href,
+    onClick,
+    children
+} : NavigationMenuItemProps
+) => {
     return (
         <li className="flex h-14 mt-2 border-b border-solid border-b-white">
             <Link

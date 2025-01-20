@@ -1,4 +1,4 @@
-const SiteRule: React.FC = () => {
+const SiteRule = () => {
     return (
         <>
 

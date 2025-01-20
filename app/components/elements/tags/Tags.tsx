@@ -3,17 +3,17 @@
 import Link from "next/link";
 import { useSearchParams, usePathname } from "next/navigation";
 import { Suspense } from "react";
-
-interface TagsProps {
-    tags?: string[];
-    ulClassName?: string;
-    hideAll?: boolean; // 新しいプロパティを追加
-}
+import { TagsProps } from "../types";
 
 // カスタムソートの順序を定義
 const customOrder = ["全て", "海外", "アジア", "日本", "インド", "タイ", "北海道"];
 
-const TagsItem = ({ tags, ulClassName, hideAll } : TagsProps) => {
+const TagsItem = ({
+    tags,
+    ulClassName,
+    hideAll,
+} : TagsProps
+) => {
     const searchParams = useSearchParams();
     const query = searchParams.get('tag') || "全て";
 

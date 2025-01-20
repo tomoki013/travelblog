@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { PageTopButtonProps } from "../types";
 
-
-interface PageTopButtonProps {
-    opacity: string;
-    onHover: (hover: boolean) => void;
-}
-
-const PageTopButton = ({ opacity, onHover } : PageTopButtonProps) => {
+const PageTopButton = ({
+    opacity,
+    onHover
+} : PageTopButtonProps
+) => {
     return (
         <Link
             href={'#'}

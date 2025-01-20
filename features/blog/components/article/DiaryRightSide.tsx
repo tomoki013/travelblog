@@ -1,6 +1,6 @@
 import * as Blog from "@/features/blog/components/index";
 
-const DiaryRightSide: React.FC = () => {
+const DiaryRightSide = () => {
     return (
         <aside className="w-[100%] bg-white md:w-[30%] md:h-[calc(100vh-var(--header-height))] md:fixed md:top-[var(--header-height)] md:right-0 p-1">
 

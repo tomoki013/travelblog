@@ -3,11 +3,9 @@
 import { useState } from "react";
 import LeftSide from "./leftSide/LeftSide";
 import RightSide from "./rightSide/RightSide";
-type Place = {
-    name: string;
-};
+import { Place } from '../types';
 
-const RandomSelectPlace: React.FC = () => {
+const RandomSelectPlace = () => {
     const [places, setPlaces] = useState<Place[]>([
         { name: "ベトナム" },
         { name: "タイ" },

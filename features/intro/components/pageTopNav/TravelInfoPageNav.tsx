@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as Elements from "@/app/components/elements/index";
 
-const TravelInfoPageNav: React.FC = () => {
+const TravelInfoPageNav = () => {
     return (
         <nav className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center p-5 bg-opacity max-w-[80%] z-[calc(var(--header-z-index)-1)] flex flex-col gap-4">
             <Link

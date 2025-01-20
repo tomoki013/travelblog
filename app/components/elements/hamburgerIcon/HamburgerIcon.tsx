@@ -1,13 +1,13 @@
 import classNames from "classnames";
 import styles from "./HamburgerIcon.module.css";
+import { HamburgerIconProps } from "../types";
 
-interface HamburgerIconProps {
-    menuIconRef: React.RefObject<HTMLDivElement | null>;
-    isMenuOpen: boolean;
-    toggleMenu: () => void;
-}
-
-const HamburgerIcon = ({ menuIconRef, isMenuOpen, toggleMenu } : HamburgerIconProps) => {
+const HamburgerIcon = ({
+    menuIconRef,
+    isMenuOpen,
+    toggleMenu
+} : HamburgerIconProps
+) => {
     return (
         <div
             ref={menuIconRef}

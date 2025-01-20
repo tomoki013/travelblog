@@ -1,15 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Post } from '@/lib/types';
 import { usePathname } from 'next/navigation';
+import { ArticleNavProps } from '../types';
 
-type ArticleNavProps = {
-    prevPost?: Post | null;
-    nextPost?: Post | null;
-};
-
-const ArticleNav: React.FC<ArticleNavProps> = ({ prevPost, nextPost }) => {
+const ArticleNav = ({
+    prevPost,
+    nextPost
+} : ArticleNavProps
+) => {
     const pathname = usePathname();
     const blogListHref = pathname.includes('diary') ? '/blogList' : pathname.includes('info') ? '/travelinfo' : '/blogList';
 
