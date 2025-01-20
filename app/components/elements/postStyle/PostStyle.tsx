@@ -29,9 +29,9 @@ const PostStyle = ({
                     <Image
                         src={post.image}
                         alt={post.alt}
-                        width={180}
-                        height={150}
-                        className="w-[100%] h-[150px] my-3 mx-0"
+                        width={200}
+                        height={200}
+                        className="h-[150px] my-3 mx-0"
                     />
                     <hr />
                     <p className="text-[var(--color-one)]">{truncateTitle(post.title, 15)}</p>
@@ -52,9 +52,9 @@ const PostStyle = ({
                     <Image
                         src={post.image}
                         alt={post.alt}
-                        width={70}
-                        height={70}
-                        className="w-[70px] h-[70px] rounded-[50%] ml-auto border-5 border-opacity"
+                        width={50}
+                        height={50}
+                        className="w-[70px] h-[70px] rounded-full ml-auto border-5 border-opacity"
                     />
                 </Link>
             </li>

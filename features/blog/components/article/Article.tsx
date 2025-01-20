@@ -29,10 +29,9 @@ const Article = ({
                 <Image 
                     src={image}
                     alt={alt}
-                    width={1}
-                    height={1}
-                    layout="responsive"
-                    className="max-w-[300px] max-h-[500px]"
+                    width={400}
+                    height={400}
+                    className="max-w-[300px] max-h-[300px] md:max-w-[400px] md:max-h-[400px]"
                 />
             </div>
 

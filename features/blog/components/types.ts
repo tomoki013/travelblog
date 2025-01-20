@@ -1,6 +1,13 @@
 import { Post } from '@/lib/types';
 
-export interface ArticleProps extends Post {
+export interface ArticleProps {
+    title: string;
+    description: string;
+    place: string;
+    dates: string[];
+    image: string;
+    alt: string;
+    tags: string[];
     content: string;
 }
 
