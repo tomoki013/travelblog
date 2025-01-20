@@ -1,0 +1,23 @@
+.add_button {
+    --bg-color: #3b82f6;
+    color: #fff;
+    background-color: var(--bg-color);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    min-width: 4rem;
+    &:hover {
+        background-color: color-mix(in srgb, var(--bg-color), black 20%);
+    }
+}
+
+.delete_button {
+    --bg-color: #ef4444;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    color: #fff;
+    background-color: var(--bg-color);
+    border-radius: 0.25rem;
+    &:hover {
+        background-color: color-mix(in srgb, var(--bg-color), black 20%);
+    }
+}
