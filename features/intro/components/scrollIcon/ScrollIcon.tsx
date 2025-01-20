@@ -1,6 +1,6 @@
 import styles from "./ScrollIcon.module.css";
 
-const ScrollIcon: React.FC = () => {
+const ScrollIcon = () => {
     return (
         <div className={styles.scroll_icon}>
             <span>Scroll</span>

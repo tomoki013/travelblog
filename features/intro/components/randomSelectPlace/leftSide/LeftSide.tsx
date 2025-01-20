@@ -1,16 +1,12 @@
 import Link from "next/link";
 import styles from "./LeftSide.module.css";
+import { LeftSideProps } from "../../types";
 
-type Place = {
-    name: string;
-}
-
-type LeftSideProps = {
-    selectedPlace: Place | null;
-    isLoading: boolean;
-}
-
-const LeftSide: React.FC<LeftSideProps> = ({ selectedPlace, isLoading }) => {
+const LeftSide = ({
+    selectedPlace,
+    isLoading
+} : LeftSideProps
+) => {
     return (
         <div className="flex flex-col space-y-4 p-4">
             {isLoading ? (

@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import FooterNavigation from './FooterNavigation';
 import * as Elements from '@/app/components/elements/index';
+import { FooterProps } from '../types';
 
-interface FooterProps {
-    className?: string;
-}
-
-const Footer = ({ className } : FooterProps) => {
+const Footer = ({
+    className
+} : FooterProps
+) => {
     const [scrollPosition, setScrollPosition] = useState<number>(0);
     const [pageTopOpacity, setPageTopOpacity] = useState<number>(0);
 

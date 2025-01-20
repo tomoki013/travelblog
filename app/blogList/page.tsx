@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default async function BlogListPage() {
+const BlogListPage = async ()  => {
     const posts = await getAllDiaries();
     const tags = Array.from(new Set(posts.flatMap(post => post.tags)));
     return (
@@ -41,3 +41,5 @@ export default async function BlogListPage() {
         </Elements.MainContainer>
     );
 }
+
+export default BlogListPage;

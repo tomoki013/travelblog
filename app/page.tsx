@@ -2,7 +2,7 @@ import * as Elements from '@/app/components/elements/index';
 import * as Intro from '@/features/intro/components/index';
 import * as Blog from '@/features/blog/components/index';
 
-export default function Home() {
+const Home = () => {
     return (
         <Elements.MainContainer>
 
@@ -41,3 +41,5 @@ export default function Home() {
         </Elements.MainContainer>
     );
 }
+
+export default Home;

@@ -1,20 +1,20 @@
 import DisplayPostItems from './DisplayPostItem';
 import { Suspense } from 'react';
 import { getAllDiaries, getAllInfos } from '@/lib/post';
+import { DisplayPostProps } from '../types';
 
-interface DisplayPostProps {
-    type: "diary" | "info";
-    displayCount?: number;
-    id?: string;
-    children?: React.ReactNode;
-    styleType: "style1" | "style2";
-    containerStyle?: React.CSSProperties;
-    h2ClassName?: string;
-    hrClassName?: string;
-    sortType?: 'date' | 'random' | 'latest';
-}
-
-const DisplayPost: React.FC<DisplayPostProps> = ({ type, styleType, children, displayCount, id, h2ClassName, hrClassName, containerStyle, sortType }) => {
+const DisplayPost = ({
+    type,
+    styleType,
+    children,
+    displayCount,
+    id,
+    h2ClassName,
+    hrClassName,
+    containerStyle,
+    sortType
+} : DisplayPostProps
+) => {
     const posts = type === "diary" ? getAllDiaries() : type === "info" ? getAllInfos() : getAllDiaries();
 
     return (

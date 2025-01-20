@@ -1,15 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Post } from '@/lib/types';
 import styles from './PostStyle.module.scss';
+import { PostStyleProps } from "../types";
 
-interface PostStyleProps {
-    post: Post;
-    generatePostLink: (post: Post) => string;
-    styleType: "style1" | "style2";
-}
-
-const PostStyle = ({ post, generatePostLink, styleType } : PostStyleProps) => {
+const PostStyle = ({
+    post,
+    generatePostLink,
+    styleType,
+} : PostStyleProps
+) => {
     const truncateTitle = (title: string, maxLength: number) => {
         if (title.length > maxLength) {
             return title.substring(0, maxLength) + '...';

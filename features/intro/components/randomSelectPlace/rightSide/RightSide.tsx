@@ -1,24 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { RightSideProps } from "../../types";
 
-type Place = {
-    name: string;
-}
-
-type RightSideProps = {
-    places: Place[];
-    onAddPlace: (PlaceName: string) => void;
-    onDeletePlace: (index: number) => void;
-    onClearPlaces: () => void;
-};
-
-const RightSide: React.FC<RightSideProps> = ({
+const RightSide = ({
     places,
     onAddPlace,
     onDeletePlace,
     onClearPlaces,
-}) => {
+}: RightSideProps
+) => {
     const [newPlace, setNewPlace] = useState("");
 
     const handleAdd = () => {

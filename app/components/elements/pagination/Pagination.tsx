@@ -1,14 +1,14 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { PaginationProps } from "../types";
 
-interface PaginationProps {
-    totalPages: number;
-    currentPage: number;
-    onPageChange: (page: number) => void;
-}
-
-const Pagination = ({ totalPages, currentPage, onPageChange } : PaginationProps) => {
+const Pagination = ({
+    totalPages,
+    currentPage,
+    onPageChange
+} : PaginationProps
+) => {
     const pathname = usePathname();
 
     if (!pathname.includes('/blogList') && !pathname.includes('/travelinfo')) {

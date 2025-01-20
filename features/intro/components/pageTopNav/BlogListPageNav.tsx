@@ -5,7 +5,7 @@ import * as Elements from "@/app/components/elements/index";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-const BlogListPageNavItem: React.FC = () => {
+const BlogListPageNavItem = () => {
     const searchParams = useSearchParams();
     const tag = searchParams.get("tag") || "ブログ一覧";
 
@@ -32,7 +32,7 @@ const BlogListPageNavItem: React.FC = () => {
     );
 }
 
-const BlogListPageNav: React.FC = () => {
+const BlogListPageNav = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
             <BlogListPageNavItem />

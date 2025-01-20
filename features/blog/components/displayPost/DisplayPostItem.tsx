@@ -3,20 +3,7 @@
 import { useSearchParams, usePathname } from "next/navigation";
 import { useState, useMemo } from "react";
 import * as Elements from '@/app/components/elements/index';
-import { Post } from "@/lib/types";
-
-interface DisplayPostItemProps {
-    type: "diary" | "info";
-    posts: Post[];
-    displayCount?: number;
-    id?: string;
-    children?: React.ReactNode;
-    styleType: "style1" | "style2";
-    containerStyle?: React.CSSProperties;
-    h2ClassName?: string;
-    hrClassName?: string;
-    sortType?: 'date' | 'random' | 'latest';
-}
+import { DisplayPostItemProps } from "../types";
 
 const DisplayPostItems = ({
     type,
@@ -29,7 +16,8 @@ const DisplayPostItems = ({
     hrClassName,
     sortType = 'latest',
     children
-} : DisplayPostItemProps) => {
+} : DisplayPostItemProps
+) => {
     const searchParams = useSearchParams();
     const pathname = usePathname();
     const tag = searchParams.get("tag");

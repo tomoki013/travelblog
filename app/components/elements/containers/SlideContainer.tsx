@@ -1,8 +1,9 @@
-interface SlideContainerProps {
-    children: React.ReactNode;
-}
+import { WithChildren } from "../types";
 
-const SlideContainer = ({ children } : SlideContainerProps) => {
+const SlideContainer = ({
+    children
+} : WithChildren
+) => {
     return (
         <div className='w-[100%] h-[calc(100vh-var(--mini-header-height))] md:h-[calc(100vh-var(--header-height))]'>
             {children}

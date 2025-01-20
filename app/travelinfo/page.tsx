@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-export default function TravelInfo() {
+const TravelInfoPage = () => {
     const posts = getAllInfos();
     const tags = Array.from(new Set(posts.flatMap(post => post.tags)));
     return (
@@ -41,3 +41,5 @@ export default function TravelInfo() {
         </Elements.MainContainer>
     );
 }
+
+export default TravelInfoPage;

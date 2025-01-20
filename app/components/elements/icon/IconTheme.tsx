@@ -1,11 +1,11 @@
 import Link from "next/link"
+import { IconThemeProps } from "../types";
 
-interface IconThemeProps {
-    href: string;
-    children: React.ReactNode;
-}
-
-const IconTheme = ({ href, children } : IconThemeProps) => {
+const IconTheme = ({
+    href,
+    children
+} : IconThemeProps
+) => {
     return (
         <Link
             href={href}
