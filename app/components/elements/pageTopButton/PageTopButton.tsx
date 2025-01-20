@@ -6,7 +6,7 @@ interface PageTopButtonProps {
     onHover: (hover: boolean) => void;
 }
 
-const PageTopButton: React.FC<PageTopButtonProps> = ({ opacity, onHover }) => {
+const PageTopButton = ({ opacity, onHover } : PageTopButtonProps) => {
     return (
         <Link
             href={'#'}

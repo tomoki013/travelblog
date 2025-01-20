@@ -6,7 +6,7 @@ interface NavigationItemProps {
     className?: string;
 }
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ href, children, className }) => {
+const NavigationItem = ({ href, children, className } : NavigationItemProps) => {
     return (
         <li className='list-none'>
             <Link

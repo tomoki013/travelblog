@@ -1,6 +1,6 @@
 import NavigationItem from "./navigationItem/NavigationItem";
 import PageTopButton from "./pageTopButton/PageTopButton";
-import HambargerIcon from "./hambargerIcon/HambargerIcon";
+import HamburgerIcon from "./hamburgerIcon/HamburgerIcon";
 import MainContainer from "./containers/MainContainer";
 import SlideContainer from "./containers/SlideContainer";
 import UnitContainer from "./containers/UnitContainer";
@@ -15,7 +15,7 @@ import Pagination from "./pagination/Pagination";
 export {
     NavigationItem,
     PageTopButton,
-    HambargerIcon,
+    HamburgerIcon,
     MainContainer,
     SlideContainer,
     UnitContainer,

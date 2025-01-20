@@ -9,7 +9,7 @@ interface PostStyleProps {
     styleType: "style1" | "style2";
 }
 
-const PostStyle: React.FC<PostStyleProps> = ({ post, generatePostLink, styleType }) => {
+const PostStyle = ({ post, generatePostLink, styleType } : PostStyleProps) => {
     const truncateTitle = (title: string, maxLength: number) => {
         if (title.length > maxLength) {
             return title.substring(0, maxLength) + '...';

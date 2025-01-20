@@ -1,17 +1,17 @@
 import classNames from "classnames";
-import styles from "./HambargerIcon.module.css";
+import styles from "./HamburgerIcon.module.css";
 
-interface HambargerIconProps {
+interface HamburgerIconProps {
     menuIconRef: React.RefObject<HTMLDivElement | null>;
     isMenuOpen: boolean;
     toggleMenu: () => void;
 }
 
-const HambargerIcon: React.FC<HambargerIconProps> = ({ menuIconRef, isMenuOpen, toggleMenu }) => {
+const HamburgerIcon = ({ menuIconRef, isMenuOpen, toggleMenu } : HamburgerIconProps) => {
     return (
         <div
             ref={menuIconRef}
-            className={classNames(styles.hambarger, { [styles.active]: isMenuOpen })}
+            className={classNames(styles.hamburger, { [styles.active]: isMenuOpen })}
             onClick={toggleMenu}
             aria-label="メニューアイコン"
             style={{ pointerEvents: "auto", touchAction: "manipulation" }} // Ensure pointer events and touch action are enabled
@@ -24,4 +24,4 @@ const HambargerIcon: React.FC<HambargerIconProps> = ({ menuIconRef, isMenuOpen, 
     );
 }
 
-export default HambargerIcon;
+export default HamburgerIcon;

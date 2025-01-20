@@ -8,7 +8,7 @@ interface FooterProps {
     className?: string;
 }
 
-const BlogFooter: React.FC<FooterProps> = ({ className }) => {
+const BlogFooter = ({ className } : FooterProps) => {
     const [scrollPosition, setScrollPosition] = useState<number>(0);
     const [pageTopOpacity, setPageTopOpacity] = useState<number>(0);
 

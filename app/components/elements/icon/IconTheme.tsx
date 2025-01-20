@@ -5,7 +5,7 @@ interface IconThemeProps {
     children: React.ReactNode;
 }
 
-const IconTheme: React.FC<IconThemeProps> = ({ href, children }) => {
+const IconTheme = ({ href, children } : IconThemeProps) => {
     return (
         <Link
             href={href}

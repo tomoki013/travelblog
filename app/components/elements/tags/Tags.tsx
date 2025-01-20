@@ -13,7 +13,7 @@ interface TagsProps {
 // カスタムソートの順序を定義
 const customOrder = ["全て", "海外", "アジア", "日本", "インド", "タイ", "北海道"];
 
-const TagsItem: React.FC<TagsProps> = ({ tags, ulClassName, hideAll }) => {
+const TagsItem = ({ tags, ulClassName, hideAll } : TagsProps) => {
     const searchParams = useSearchParams();
     const query = searchParams.get('tag') || "全て";
 

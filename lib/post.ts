@@ -24,6 +24,7 @@ const getAllPosts = (directory: string, type: 'diary' | 'info'): Post[] => {
 
         // datesを配列として取得し、日付オブジェクトに変換
         const dates: string[] = data.dates || [];
+        console.log(data.slug)
 
         return {
             title: data.title,
