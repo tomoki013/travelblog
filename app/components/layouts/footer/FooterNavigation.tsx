@@ -1,6 +1,6 @@
 import * as Elements from '@/app/components/elements/index';
 
-const FooterNavigation: React.FC = () => {
+const FooterNavigation = () => {
     return (
         <nav className='mt-7'>
             <ul className='flex justify-center flex-col gap-5 text-center md:flex-row'>

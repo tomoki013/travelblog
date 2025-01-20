@@ -8,7 +8,7 @@ interface PaginationProps {
     onPageChange: (page: number) => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ totalPages, currentPage, onPageChange }) => {
+const Pagination = ({ totalPages, currentPage, onPageChange } : PaginationProps) => {
     const pathname = usePathname();
 
     if (!pathname.includes('/blogList') && !pathname.includes('/travelinfo')) {

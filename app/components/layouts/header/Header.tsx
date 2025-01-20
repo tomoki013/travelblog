@@ -6,7 +6,7 @@ import NavigationMenuItem from "./NavigationMenuItem";
 import * as Elements from "@/app/components/elements/index";
 import classNames from "classnames";
 
-const Header: React.FC = () => {
+const Header = () => {
     const [date, setDate] = useState<string>("");
     const [time, setTime] = useState<string>("");
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
                 style={{ opacity: headerOpacity }}
             >
                 {/* 時刻表示 */}
-                <div className="hidden md:block absolute top-[var(--hambarger-top-position)] left-6 text-white text-center">
+                <div className="hidden md:block absolute top-[var(--hamburger-top-position)] left-6 text-white text-center">
                     <div>{date}</div>
                     <div>{time}</div>
                 </div>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
                 <h1 className="text-white">ともきちの旅行ブログ</h1>
 
                 {/* ハンバーガーメニュー */}
-                <Elements.HambargerIcon
+                <Elements.HamburgerIcon
                     menuIconRef={menuIconRef}
                     isMenuOpen={isMenuOpen}
                     toggleMenu={toggleMenu}

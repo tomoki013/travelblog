@@ -6,7 +6,7 @@ interface NavigationMenuItemProps {
     children: React.ReactNode;
 }
 
-const NavigationMenuItem: React.FC<NavigationMenuItemProps> = ({ href, onClick, children }) => {
+const NavigationMenuItem = ({ href, onClick, children } : NavigationMenuItemProps) => {
     return (
         <li className="flex h-14 mt-2 border-b border-solid border-b-white">
             <Link

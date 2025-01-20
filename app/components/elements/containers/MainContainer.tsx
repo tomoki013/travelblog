@@ -3,7 +3,7 @@ interface MainContainerProps {
     className?: string;
 }
 
-const MainContainer: React.FC<MainContainerProps> = ({ children, className }) => {
+const MainContainer = ({ children, className } : MainContainerProps) => {
     return (
         <main className={`" mt-[var(--mini-header-height)] md:mt-[var(--header-height)] " ${className} `}>
             {children}
