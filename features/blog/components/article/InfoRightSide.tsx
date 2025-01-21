@@ -7,7 +7,7 @@ const InfoRightSide = () => {
             {/* おすすめのブログ */}
             <div>
 				<h2 className="text-center text-[var(--color-three)]">おすすめのブログ</h2>
-				<Blog.DisplayPost type="info" displayCount={3} styleType="style2" containerStyle={{ margin: 0 }} h2ClassName="hidden" hrClassName="hidden" sortType="random" />
+				<Blog.DisplayPost type="info" displayCount={4} styleType="style2" containerStyle={{ margin: 0 }} h2ClassName="hidden" hrClassName="hidden" sortType="random" />
 			</div>
 
         </aside>

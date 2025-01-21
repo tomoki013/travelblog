@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import { TagsProps } from "../types";
 
 // カスタムソートの順序を定義
-const customOrder = ["全て", "海外", "アジア", "日本", "インド", "タイ", "北海道"];
+const customOrder = ["全て", "海外", "アジア", "日本", "インド", "タイ", "ベトナム", "北海道"];
 
 const TagsItem = ({
     tags,

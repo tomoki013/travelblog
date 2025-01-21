@@ -13,21 +13,25 @@ const Home = () => {
             </Elements.SlideContainer>
 
             <Blog.DisplayPost type='diary' id='blog' styleType='style1' displayCount={5}> 
-                <Elements.NavigationItem
-                    href="/blogList"
-                    className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
-                >
-                    一覧へ ＞＞
-                </Elements.NavigationItem>
+                <ul>
+                    <Elements.NavigationItem
+                        href="/blogList"
+                        className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
+                    >
+                        一覧へ ＞＞
+                    </Elements.NavigationItem>
+                </ul>
             </Blog.DisplayPost>
 
             <Blog.DisplayPost type='info' id='travelinfo' styleType='style1' displayCount={5}>
-                <Elements.NavigationItem
-                    href="/travelinfo"
-                    className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
-                >
-                    一覧へ ＞＞
-                </Elements.NavigationItem>
+                <ul>
+                    <Elements.NavigationItem
+                        href="/travelinfo"
+                        className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
+                    >
+                        一覧へ ＞＞
+                    </Elements.NavigationItem>
+                </ul>
             </Blog.DisplayPost>
             
             <Elements.UnitContainer id='roulette'>
