@@ -3,8 +3,9 @@
 import Link from "next/link";
 import * as Elements from "@/app/components/elements/index";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-const TravelInfoPageNav = () => {
+const TravelInfoPageNavItem = () => {
     const searchParams = useSearchParams();
     const tag = searchParams.get("tag") || null;
 
@@ -28,6 +29,14 @@ const TravelInfoPageNav = () => {
                 </Elements.NavigationItem>
             </ul>
         </nav>
+    );
+};
+
+const TravelInfoPageNav = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <TravelInfoPageNavItem />
+        </Suspense>
     );
 };
 
