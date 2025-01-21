@@ -7,7 +7,7 @@ import { Suspense } from "react";
 
 const BlogListPageNavItem = () => {
     const searchParams = useSearchParams();
-    const tag = searchParams.get("tag") || "ブログ一覧";
+    const tag = searchParams.get("tag") || null;
 
     return (
         <nav className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center p-5 bg-opacity max-w-[80%] z-[calc(var(--header-z-index)-1)] flex flex-col gap-4">
@@ -15,7 +15,7 @@ const BlogListPageNavItem = () => {
                 href="/"
                 className="underline text-[1.5rem] w-fit mx-auto"
             >
-                {tag}
+                {tag} ブログ一覧
             </Link>
             <ul className="p-0 flex justify-center items-center flex-col gap-x-5 gap-y-2 md:flex-row">
                 <Elements.NavigationItem href="#blogList">
