@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap --config next-sitemap.config.ts",
-    "postbuild": "next-sitemap",
+    "build": "next build",
+    "postbuild": "next-sitemap --config next-sitemap.config.ts",
     "start": "next start",
     "lint": "next lint"
   },
