@@ -11,7 +11,7 @@ const Pagination = ({
 ) => {
     const pathname = usePathname();
 
-    if (!pathname.includes('/blogList') && !pathname.includes('/travelInfo')) {
+    if (!pathname.includes('/travelDiary') && !pathname.includes('/travelInfo')) {
         return null;
     }
 

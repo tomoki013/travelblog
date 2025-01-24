@@ -1,7 +1,7 @@
 import Profile from "./profile/Profile";
 import PageTopSlide from "./pageTopSlide/PageTopSlide";
 import TopPageNav from "./pageTopNav/TopPageNav";
-import BlogListPageNav from "./pageTopNav/BlogListPageNav";
+import TravelDiaryPageNav from "./pageTopNav/TravelDiaryPageNav";
 import TravelInfoPageNav from "./pageTopNav/TravelInfoPageNav";
 import ContactPageNav from "./pageTopNav/ContactPageNav";
 import ScrollIcon from "./scrollIcon/ScrollIcon";
@@ -15,5 +15,5 @@ export {
     ContactPageNav,
     ScrollIcon,
     RandomSelectPlace,
-    BlogListPageNav,
+    TravelDiaryPageNav,
 };

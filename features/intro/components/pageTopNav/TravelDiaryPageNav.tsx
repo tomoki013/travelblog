@@ -5,7 +5,7 @@ import * as Elements from "@/app/components/elements/index";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-const BlogListPageNavItem = () => {
+const TravelDiaryPageNavItem = () => {
     const searchParams = useSearchParams();
     const tag = searchParams.get("tag") || null;
 
@@ -18,7 +18,7 @@ const BlogListPageNavItem = () => {
                 {tag} 旅行日記
             </Link>
             <ul className="p-0 flex justify-center items-center flex-col gap-x-5 gap-y-2 md:flex-row">
-                <Elements.NavigationItem href="#blogList">
+                <Elements.NavigationItem href="#travelDiary">
                     旅行日記
                 </Elements.NavigationItem>
                 <Elements.NavigationItem href="#roulette">
@@ -32,12 +32,12 @@ const BlogListPageNavItem = () => {
     );
 }
 
-const BlogListPageNav = () => {
+const TravelDiaryPageNav = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <BlogListPageNavItem />
+            <TravelDiaryPageNavItem />
         </Suspense>
     );
 }
 
-export default BlogListPageNav;
+export default TravelDiaryPageNav;

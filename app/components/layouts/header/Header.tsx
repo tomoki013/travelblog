@@ -118,7 +118,7 @@ const Header = () => {
                         トップページ
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        href="/blogList"
+                        href="/travelDiary"
                         onClick={toggleMenu}
                     >
                         旅行日記
