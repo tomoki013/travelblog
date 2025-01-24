@@ -19,10 +19,10 @@ const TagsItem = ({
 
     const pathname = usePathname();
     let url = '/blogList';
-    if (pathname.includes('travelinfo')) {
-        url = '/travelinfo';
+    if (pathname.includes('travelInfo')) {
+        url = '/travelInfo';
     } else if (pathname.includes('/info')) {
-        url = '/travelinfo';
+        url = '/travelInfo';
     }
 
     if (!tags || tags.length === 0) {

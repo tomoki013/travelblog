@@ -6,7 +6,7 @@ import { getAllInfos } from '@/lib/post';
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: `ともきちの旅行ブログ｜観光情報一覧`,
+        title: `ともきちの旅行日記｜観光情報`,
         description: `初心者から経験者まで楽しめる旅情報を一覧でご覧いただけます。おすすめの観光スポットや隠れた名所をまとめました！`,
     };
 }
@@ -28,7 +28,7 @@ const TravelInfoPage = () => {
                 <Elements.Tags tags={tags} ulClassName='justify-center' />
             </Elements.UnitContainer>
 
-            <Blog.DisplayPost type='info' id='travelinfo' styleType='style1' displayCount={10} />
+            <Blog.DisplayPost type='info' id='travelInfo' styleType='style1' displayCount={10} />
 
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />

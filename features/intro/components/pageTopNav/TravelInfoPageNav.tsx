@@ -18,7 +18,7 @@ const TravelInfoPageNavItem = () => {
                 {tag} 観光情報
             </Link>
             <ul className="p-0 flex justify-center items-center flex-col gap-x-5 gap-y-2 md:flex-row">
-                <Elements.NavigationItem href="#travelinfo">
+                <Elements.NavigationItem href="#travelInfo">
                     観光情報
                 </Elements.NavigationItem>
                 <Elements.NavigationItem href="#roulette">

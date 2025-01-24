@@ -5,8 +5,8 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: `ともきちの旅行ブログ｜お問い合わせ`,
-        description: `ブログへのお問い合わせはこちらから。記事に関するご質問や広告掲載、コラボレーションのご依頼もお待ちしております。`,
+        title: `ともきちの旅行日記｜お問い合わせ`,
+        description: `ともきちの旅行日記へのお問い合わせはこちらから。記事に関するご質問や広告掲載、コラボレーションのご依頼もお待ちしております。`,
     };
 }
 
@@ -20,9 +20,9 @@ const ContactPage = () => {
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
 
-            <Elements.UnitContainer id="contactForm">
+            {/* <Elements.UnitContainer id="contactForm">
                 <Contact.ContactForm />
-            </Elements.UnitContainer>
+            </Elements.UnitContainer> */}
 
             <Elements.UnitContainer className="md:flex" id="siteRule">
                 <Contact.SiteRule />

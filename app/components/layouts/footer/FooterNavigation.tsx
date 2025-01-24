@@ -17,7 +17,7 @@ const FooterNavigation = () => {
                     ブログ一覧
                 </Elements.NavigationItem>
                 <Elements.NavigationItem
-                    href={'/travelinfo'}
+                    href={'/travelInfo'}
                     className='hover:underline text-[var(--color-one)] hover:text-[var(--color-three)]'
                 >
                     観光情報

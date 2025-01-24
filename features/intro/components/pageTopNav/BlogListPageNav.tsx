@@ -15,11 +15,11 @@ const BlogListPageNavItem = () => {
                 href="/"
                 className="underline text-[1.5rem] w-fit mx-auto"
             >
-                {tag} ブログ一覧
+                {tag} 旅行日記
             </Link>
             <ul className="p-0 flex justify-center items-center flex-col gap-x-5 gap-y-2 md:flex-row">
                 <Elements.NavigationItem href="#blogList">
-                    ブログ一覧
+                    旅行日記
                 </Elements.NavigationItem>
                 <Elements.NavigationItem href="#roulette">
                     旅行先ルーレット
