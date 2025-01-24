@@ -18,7 +18,7 @@ const TagsItem = ({
     const query = searchParams.get('tag') || "全て";
 
     const pathname = usePathname();
-    let url = '/blogList';
+    let url = '/travelDiary';
     if (pathname.includes('travelInfo')) {
         url = '/travelInfo';
     } else if (pathname.includes('/info')) {

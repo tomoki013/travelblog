@@ -12,10 +12,10 @@ const Home = () => {
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
 
-            <Blog.DisplayPost type='diary' id='blog' styleType='style1' displayCount={5}> 
+            <Blog.DisplayPost type='diary' id='travelDiary' styleType='style1' displayCount={5}> 
                 <ul>
                     <Elements.NavigationItem
-                        href="/blogList"
+                        href="/travelDiary"
                         className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
                     >
                         一覧へ ＞＞

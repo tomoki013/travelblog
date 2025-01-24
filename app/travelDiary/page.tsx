@@ -18,7 +18,7 @@ const BlogListPage = async ()  => {
         <Elements.MainContainer>
                     
             <Elements.SlideContainer>
-                <Intro.BlogListPageNav />
+                <Intro.TravelDiaryPageNav />
                 <Intro.PageTopSlide />
                 <Intro.ScrollIcon />
             </Elements.SlideContainer>
@@ -28,7 +28,7 @@ const BlogListPage = async ()  => {
                 <Elements.Tags tags={tags} ulClassName='justify-center' />
             </Elements.UnitContainer>
 
-            <Blog.DisplayPost type="diary" styleType="style1" id='blogList' />
+            <Blog.DisplayPost type="diary" styleType="style1" id='travelDiary' />
             
             <Elements.UnitContainer id='roulette'>
                 <Intro.RandomSelectPlace />

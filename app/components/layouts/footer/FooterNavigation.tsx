@@ -11,10 +11,10 @@ const FooterNavigation = () => {
                     トップページ
                 </Elements.NavigationItem>
                 <Elements.NavigationItem
-                    href={'/blogList'}
+                    href={'/travelDiary'}
                     className='hover:underline text-[var(--color-one)] hover:text-[var(--color-three)]'
                 >
-                    ブログ一覧
+                    旅行日記
                 </Elements.NavigationItem>
                 <Elements.NavigationItem
                     href={'/travelInfo'}
