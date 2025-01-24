@@ -29,13 +29,36 @@ const DisplayPostItems = ({
         if (sortType === 'random') {
             filtered = [...filtered].sort(() => Math.random() - 0.5);
         } else if (sortType === 'date') {
-            filtered = [...filtered].sort((a, b) => new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime());
+            filtered = [...filtered].sort((a, b) => {
+                const minDateA = Math.min(...a.dates.map(date => new Date(date).getTime()));
+                const minDateB = Math.min(...b.dates.map(date => new Date(date).getTime()));
+            
+                if (minDateA === minDateB) {
+                    // 日付が同じ場合は`dates`の数が少ない順
+                    return a.dates.length - b.dates.length;
+                }
+            
+                return minDateA - minDateB; // 古い日付が先
+            });
+            
         } else {
-            filtered = [...filtered].sort((a, b) => new Date(b.dates[0]).getTime() - new Date(a.dates[0]).getTime());
+            filtered = [...filtered].sort((a, b) => {
+                const maxDateA = Math.max(...a.dates.map(date => new Date(date).getTime()));
+                const maxDateB = Math.max(...b.dates.map(date => new Date(date).getTime()));
+              
+                if (maxDateA === maxDateB) {
+                  // 日付が同じ場合は`dates`の数が多い順
+                  return b.dates.length - a.dates.length;
+                }
+              
+                return maxDateB - maxDateA; // 新しい日付が先
+            });  
         }
 
         return filtered;
     }, [posts, tag, sortType]);
+
+    console.log(initialFilteredPosts);
 
     const showLatestBlogMessage = useMemo(
         () => sortType === 'latest' && currentSlug === initialFilteredPosts[0]?.slug,
@@ -50,7 +73,7 @@ const DisplayPostItems = ({
     }, [initialFilteredPosts, currentSlug]);
 
     const h2Title = useMemo(
-        () => (type === "diary" ? "ブログ一覧" : type === "info" ? "観光情報一覧" : "ブログ一覧"),
+        () => (type === "diary" ? "旅行日記一覧" : type === "info" ? "観光情報一覧" : "旅行日記一覧"),
         [type]
     );
 

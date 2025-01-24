@@ -68,7 +68,18 @@ const getAdjacentPosts = (slug: string, getAllPosts: () => Post[]): { prevPost: 
     const posts = getAllPosts();
 
     // 日付順にソート
-    posts.sort((a, b) => new Date(a.dates[0]).getTime() - new Date(b.dates[0]).getTime());
+    posts.sort((a, b) => {
+        const minDateA = Math.min(...a.dates.map(date => new Date(date).getTime()));
+        const minDateB = Math.min(...b.dates.map(date => new Date(date).getTime()));
+      
+        if (minDateA === minDateB) {
+          // 日付が同じ場合は`dates`の数が少ない順
+          return a.dates.length - b.dates.length;
+        }
+      
+        return minDateA - minDateB; // 古い日付が先
+    });
+      
 
     const index = posts.findIndex(post => post.slug === slug);
 

@@ -91,7 +91,7 @@ const Header = () => {
                 </div>
 
                 {/* タイトル */}
-                <h1 className="text-white">ともきちの旅行ブログ</h1>
+                <h1 className="text-white">ともきちの旅行日記</h1>
 
                 {/* ハンバーガーメニュー */}
                 <Elements.HamburgerIcon
@@ -121,7 +121,7 @@ const Header = () => {
                         href="/blogList"
                         onClick={toggleMenu}
                     >
-                        ブログ一覧
+                        旅行日記一覧
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         href="/travelinfo"
