@@ -10,7 +10,7 @@ const ArticleNav = ({
 } : ArticleNavProps
 ) => {
     const pathname = usePathname();
-    const blogListHref = pathname.includes('diary') ? '/blogList' : pathname.includes('info') ? '/travelinfo' : '/blogList';
+    const blogListHref = pathname.includes('diary') ? '/blogList' : pathname.includes('info') ? '/travelInfo' : '/blogList';
 
     return (
         <nav className="relative h-6 my-3">

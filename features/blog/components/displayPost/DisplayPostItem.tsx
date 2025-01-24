@@ -73,7 +73,7 @@ const DisplayPostItems = ({
     }, [initialFilteredPosts, currentSlug]);
 
     const h2Title = useMemo(
-        () => (type === "diary" ? "旅行日記一覧" : type === "info" ? "観光情報一覧" : "旅行日記一覧"),
+        () => (type === "diary" ? "旅行日記" : type === "info" ? "観光情報" : "旅行日記"),
         [type]
     );
 

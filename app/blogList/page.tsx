@@ -6,7 +6,7 @@ import { getAllDiaries } from '@/lib/post';
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: `ともきちの旅行ブログ｜ブログ一覧`,
+        title: `ともきちの旅行日記｜旅行日記`,
         description: `世界各地の旅行記や観光スポット情報を一覧でご紹介します。冒険のヒントや観光地の見どころ、旅のアイデアをお探しなら、ぜひチェックしてみてください！`,
     };
 }

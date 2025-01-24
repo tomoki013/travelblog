@@ -121,10 +121,10 @@ const Header = () => {
                         href="/blogList"
                         onClick={toggleMenu}
                     >
-                        旅行日記一覧
+                        旅行日記
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        href="/travelinfo"
+                        href="/travelInfo"
                         onClick={toggleMenu}
                     >
                         観光情報

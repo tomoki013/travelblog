@@ -18,9 +18,9 @@ const TopPageNav = () => {
                     海外旅行
                 </Elements.NavigationItem> */}
                 <Elements.NavigationItem href="#blog">
-                    ブログ一覧
+                    旅行日記
                 </Elements.NavigationItem>
-                <Elements.NavigationItem href="#travelinfo">
+                <Elements.NavigationItem href="#travelInfo">
                     観光情報
                 </Elements.NavigationItem>
                 <Elements.NavigationItem href="#roulette">

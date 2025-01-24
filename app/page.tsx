@@ -23,10 +23,10 @@ const Home = () => {
                 </ul>
             </Blog.DisplayPost>
 
-            <Blog.DisplayPost type='info' id='travelinfo' styleType='style1' displayCount={5}>
+            <Blog.DisplayPost type='info' id='travelInfo' styleType='style1' displayCount={5}>
                 <ul>
                     <Elements.NavigationItem
-                        href="/travelinfo"
+                        href="/travelInfo"
                         className="block underline text-[var(--color-one)] w-fit mx-auto hover:text-[var(--color-three)]"
                     >
                         一覧へ ＞＞
