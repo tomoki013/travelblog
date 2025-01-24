@@ -16,6 +16,7 @@ const DisplayPost = ({
 } : DisplayPostProps
 ) => {
     const posts = type === "diary" ? getAllDiaries() : type === "info" ? getAllInfos() : getAllDiaries();
+    console.log(posts)
 
     return (
         <Suspense fallback={<div>Loading...</div>}>

@@ -48,7 +48,7 @@ const DisplayPostItems = ({
               
                 if (maxDateA === maxDateB) {
                   // 日付が同じ場合は`dates`の数が多い順
-                  return b.dates.length - a.dates.length;
+                  return a.dates.length - b.dates.length;
                 }
               
                 return maxDateB - maxDateA; // 新しい日付が先

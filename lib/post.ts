@@ -24,7 +24,6 @@ const getAllPosts = (directory: string, type: 'diary' | 'info'): Post[] => {
 
         // datesを配列として取得し、日付オブジェクトに変換
         const dates: string[] = data.dates || [];
-        console.log(data.slug)
 
         return {
             title: data.title,
@@ -65,20 +64,21 @@ const getPostBySlug = async (slug: string, directory: string) => {
  * @returns {object} - 前後の投稿データ。
  */
 const getAdjacentPosts = (slug: string, getAllPosts: () => Post[]): { prevPost: Post | null, nextPost: Post | null } => {
-    const posts = getAllPosts();
+    let posts = getAllPosts();
 
     // 日付順にソート
-    posts.sort((a, b) => {
+    posts = [...posts].sort((a, b) => {
         const minDateA = Math.min(...a.dates.map(date => new Date(date).getTime()));
         const minDateB = Math.min(...b.dates.map(date => new Date(date).getTime()));
-      
+    
         if (minDateA === minDateB) {
-          // 日付が同じ場合は`dates`の数が少ない順
-          return a.dates.length - b.dates.length;
+            // 日付が同じ場合は`dates`の数が少ない順
+            return a.dates.length - b.dates.length;
         }
-      
+    
         return minDateA - minDateB; // 古い日付が先
     });
+    
       
 
     const index = posts.findIndex(post => post.slug === slug);
