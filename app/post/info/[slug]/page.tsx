@@ -25,7 +25,7 @@ const formatDate = (dateString: string[]) => {
     const month = date.getMonth() + 1;
     const day = date.getDate();
     return `${year}年${month}月${day}日`;
-};
+}
 
 export default async function InfoPage(props: { params: Promise<{ slug: string }> }) {
     const params = await props.params;
