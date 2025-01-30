@@ -75,7 +75,7 @@ const Header = () => {
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
             document.body.style.overflow = "";
-    };
+        };
     }, []);
 
     return (
