@@ -33,6 +33,8 @@ export default function RootLayout({
 						`,
 					}}>
 				</script>
+				{/* Google AdSense */}
+				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8687520805381056" crossOrigin="anonymous"></script>
 			</Head>
       		<body>
 				<Layouts.Header />
