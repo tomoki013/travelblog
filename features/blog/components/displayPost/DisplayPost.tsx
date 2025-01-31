@@ -19,7 +19,7 @@ const DisplayPost = ({
     console.log(posts)
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className='flex justify-center items-center'>Loading...</div>}>
             <DisplayPostItems type={type} posts={posts} styleType={styleType} displayCount={displayCount} id={id} h2ClassName={h2ClassName} hrClassName={hrClassName} containerStyle={containerStyle} sortType={sortType}>{children}</DisplayPostItems>
         </Suspense>
     )

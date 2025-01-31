@@ -4,8 +4,8 @@ description: "metaタグ用description"
 place: "インド"
 dates:
     - "2024-09-20"
-image: "/images/"
-alt: "の写真"
+image: "/images/India/tajmahal.jpg"
+alt: "インドと言えばのタージマハルの写真"
 tags: ["海外","インド"]
 ---
 
@@ -289,7 +289,7 @@ tags: ["海外","インド"]
 次は3ページ目です。  
 もう一息なのでがんばっていきましょう！  
 
-## 3ページ目、Applicant's Address Details
+<!-- ## 3ページ目、Applicant's Address Details
 
 **House No./Street（部屋番号、番地）**
-> 部屋番号、番地など
+> 部屋番号、番地など -->
