@@ -42,7 +42,7 @@ const Footer = ({
 
     return (
         <footer className={`' bg-[var(--color-two)] p-4 text-[var(--color-one)] ${className} '`}>
-            <p className='text-center'>&copy; {currentYear} Tomokichi TravelBlog</p>
+            <small className='block text-center'>&copy; 2024-{currentYear} Tomoki Takagi All rights reserved</small>
             <FooterNavigation />
             <Elements.PageTopButton
                 opacity={pageTopOpacity.toString()}

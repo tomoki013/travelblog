@@ -4,6 +4,7 @@ import { ArticleProps } from "../types";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import * as Elements from '@/app/components/elements/index';
+import InfoIndex from "../infoIndex/InfoIndex";
 
 const Article = ({
     title,
@@ -35,8 +36,17 @@ const Article = ({
                 />
             </div>
 
+            <InfoIndex content={content} />
+
             <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
+                components={{
+                    h2 : ({ children }) => {
+                        const text = String(children);
+                        const id = text.replace(/\s+/g, "%20"); // 空白を%20に変換
+                        return <h2 id={id}>{children}</h2>;
+                    },
+                }}
                 className={`" prose ${ styles.blog_doc} "`}
             >
                 {content}

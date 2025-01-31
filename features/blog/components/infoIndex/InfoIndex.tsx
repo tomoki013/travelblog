@@ -1,11 +1,13 @@
 "use client";
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import { visit } from 'unist-util-visit';
 import { Root, Heading } from 'mdast';
 import { InfoIndexProps } from '../types';
+import { usePathname } from 'next/navigation';
 
 const InfoIndex = ({
     content
@@ -28,13 +30,19 @@ const InfoIndex = ({
         setHeadings(newHeadings);
     }, [content]);
 
+    const pathname = usePathname();
+    
+    if (pathname.includes('/diary')) {
+        return null;
+    }
+
     return (
-        <div>
-            <h2>目次</h2>
-            <ul>
+        <div className='bg-[var(--main-bg-color)] my-10 p-2 rounded-md border border-black'>
+            <h2 className='underline text-center'>目次</h2>
+            <ul className='list-disc w-fit mx-auto'>
                 {headings.map((heading, index) => (
-                    <li key={index}>
-                        <a href={`#${heading}`}>{heading}</a>
+                    <li key={index} className='my-2'>
+                        <Link href={`#${heading}`} className='hover:underline'>{heading}</Link>
                     </li>
                 ))}
             </ul>
