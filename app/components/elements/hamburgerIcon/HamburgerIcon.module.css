@@ -7,9 +7,7 @@
     top: var(--hamburger-top-position);
     right: var(--hamburger-right-position);
     transition: all .5s ease-in-out;
-    z-index: calc(var(--header-x-index) + 1);
-    pointer-events: auto;
-    touch-action: manipulation;
+    z-index: calc(var(--header-x-index) + 10);
 }
 
 /*ハンバーガーメニューのラインのスタイル*/
