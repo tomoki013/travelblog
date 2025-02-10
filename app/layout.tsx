@@ -23,11 +23,6 @@ export default function RootLayout({
 				<meta name="google-site-verification" content="jk1E308JgpkVeYLTheB9i3UHWU3QVrRU9afhkYgvWPw" />
 				<meta name="msvalidate.01" content="37047B265EABB92200421D53818C4486" />
 				<meta name="google-adsense-account" content="ca-pub-8687520805381056"></meta>
-
-				{/* netlify */}
-				<meta name="google-site-verification" content="qd9h_oeUkXKK0F-u4U5Z-c540MUq_Agst3K0rF8ERdM" />
-				<meta name="msvalidate.01" content="37047B265EABB92200421D53818C4486" />
-				<meta name="google-adsense-account" content="ca-pub-8687520805381056"></meta>
 				
 				{/* Google tag (gtag.js) */}
 				<script async src="https://www.googletagmanager.com/gtag/js?id=G-6KJ6B2X5BP"></script>
@@ -42,8 +37,10 @@ export default function RootLayout({
 						`,
 					}}>
 				</script>
+				
 				{/* Google AdSense */}
 				<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8687520805381056" crossOrigin="anonymous"></script>
+				
 			</Head>
       		<body>
 				<Layouts.Header />

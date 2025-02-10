@@ -16,11 +16,11 @@
     --vertical-img-width: 500px; /*縦の写真の時の横幅*/
     --beside-img-width: 350px; /*横の写真の時の横幅*/
     --font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*通常使用するフォント*/
-    --hamburger-width: 3.75rem; /*ハンバーガーアイコンの横幅*/
+    --hamburger-width: 3.5rem; /*ハンバーガーアイコンの横幅*/
     --hamburger-height: calc(var(--header-height) / 2.5); /*ハンバーガーアイコンの高さ*/
     --hamburger-top-position: calc(var(--header-height) / 2 - 1.56rem); /*ハンバーガーアイコンの縦の位置*/
     --hamburger-right-position: 1.5rem; /*ハンバーガーアイコンの横の位置*/
-    --mini-hamburger-width: 4rem; /*768px以下の時のハンバーガーアイコンの横幅*/
+    --mini-hamburger-width: 3.25rem; /*768px以下の時のハンバーガーアイコンの横幅*/
     --mini-hamburger-height: calc(var(--mini-header-height) / 2.5); /*768px以下の時のハンバーガーアイコンの高さ*/
     --mini-hamburger-top-position: calc(var(--mini-header-height) / 2  - 1.5rem); /*768px以下の時のハンバーガーアイコンの縦の位置*/
     --mini-hamburger-right-position: 1.25rem; /*768px以下の時のハンバーガーアイコン横の位置*/
@@ -61,6 +61,6 @@ h3 {
   
 @media (max-width: 768px) {
 	html {
-		font-size: 12px;
+		font-size: 14px;
 	}
 }
